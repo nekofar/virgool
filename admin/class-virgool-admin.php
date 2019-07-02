@@ -3,6 +3,16 @@
 /**
  * The admin-specific functionality of the plugin.
  *
+ * @link       https://milad.nekofar.com
+ * @since      1.0.0
+ *
+ * @package    Virgool
+ * @subpackage Virgool/includes
+ */
+
+/**
+ * The admin-specific functionality of the plugin.
+ *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *

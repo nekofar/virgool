@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * Register all actions and filters for the plugin
+ *
+ * @link       https://milad.nekofar.com
+ * @since      1.0.0
+ *
+ * @package    Virgool
+ * @subpackage Virgool/includes
+ */
+
+/**
  * Register all actions and filters for the plugin.
  *
  * Maintain a list of all hooks that are registered throughout

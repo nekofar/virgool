@@ -1,6 +1,19 @@
 <?php
 
 /**
+ * Define the internationalization functionality
+ *
+ * Loads and defines the internationalization files for this plugin
+ * so that it is ready for translation.
+ *
+ * @link       https://milad.nekofar.com
+ * @since      1.0.0
+ *
+ * @package    Virgool
+ * @subpackage Virgool/includes
+ */
+
+/**
  * Define the internationalization functionality.
  *
  * Loads and defines the internationalization files for this plugin

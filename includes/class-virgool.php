@@ -1,6 +1,19 @@
 <?php
 
 /**
+ * The file that defines the core plugin class
+ *
+ * A class definition that includes attributes and functions used across both the
+ * public-facing side of the site and the admin area.
+ *
+ * @link       https://milad.nekofar.com
+ * @since      1.0.0
+ *
+ * @package    Virgool
+ * @subpackage Virgool/includes
+ */
+
+/**
  * The core plugin class.
  *
  * This is used to define internationalization, admin-specific hooks, and
@@ -64,7 +77,6 @@ class Virgool {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
 
 	}
 
@@ -102,6 +114,8 @@ class Virgool {
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-virgool-admin.php';
+
+		$this->loader = new Virgool_Loader();
 
 	}
 
