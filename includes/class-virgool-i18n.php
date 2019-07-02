@@ -43,5 +43,4 @@ class Virgool_i18n {
 	}
 
 
-
 }

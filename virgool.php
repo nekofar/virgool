@@ -52,4 +52,5 @@ function run_virgool() {
 	$plugin->run();
 
 }
+
 run_virgool();
