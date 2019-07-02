@@ -64,7 +64,7 @@ class Virgool_Api {
 		$data = json_decode( $body, true );
 
 		if ( empty( $body ) || ! $data['success'] ) {
-			return new WP_Error( 'login_failed', __( 'Retrieve token has been failed.', 'virgool' ) );
+			return new WP_Error( 'login_failed', __( 'Login to the virgool api has been failed.', 'virgool' ) );
 		}
 
 		$this->headers = [
