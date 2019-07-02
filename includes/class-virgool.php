@@ -111,6 +111,11 @@ class Virgool {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-virgool-i18n.php';
 
 		/**
+		 * The class responsible for communicate to the virgool using their api.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-virgool-api.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-virgool-admin.php';
