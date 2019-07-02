@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - mariadb
+    image: wordpress:latest
+    ports:
+      - 8000:80
+    volumes:
+      - .:/var/www/html/wp-content/plugins/virgool
+    environment:
+      WORDPRESS_DB_HOST: mariadb:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        /* Set default language */
+        define('WPLANG', 'fa_IR');
+
+networks:
+  default:
+    external: true
+    name: localnet
