@@ -1,0 +1,56 @@
+# Copyright (C) 2019 Milad Nekofar
+# This file is distributed under the same license as the Virgool plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Virgool 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-07-02T23:17:17+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+"X-Domain: virgool\n"
+
+#. Plugin Name of the plugin
+msgid "Virgool"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/nekofar/virgool"
+msgstr ""
+
+#. Description of the plugin
+msgid "Virgool lets you publish posts automatically to a Virgool profile."
+msgstr ""
+
+#. Author of the plugin
+msgid "Milad Nekofar"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://milad.nekofar.com/"
+msgstr ""
+
+#: includes/class-virgool-api.php:67
+msgid "Login to the virgool api has been failed."
+msgstr ""
+
+#: includes/class-virgool-api.php:94
+msgid "Retrieve user info has been failed."
+msgstr ""
+
+#: includes/class-virgool-api.php:112
+#: includes/class-virgool-api.php:144
+msgid "Wrong post status has been selected."
+msgstr ""
+
+#: includes/class-virgool-api.php:125
+msgid "Retrieve user posts has been failed."
+msgstr ""
+
+#: includes/class-virgool-api.php:167
+msgid "Create user post has been failed."
+msgstr ""

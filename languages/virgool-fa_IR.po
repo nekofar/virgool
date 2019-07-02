@@ -1,0 +1,57 @@
+# Copyright (C) 2019 Milad Nekofar
+# This file is distributed under the same license as the Virgool plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Virgool 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
+"POT-Creation-Date: 2019-07-02T23:17:17+00:00\n"
+"PO-Revision-Date: 2019-07-03 03:53+0430\n"
+"Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Domain: virgool\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+
+#. Plugin Name of the plugin
+msgid "Virgool"
+msgstr "ویرگول"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/nekofar/virgool"
+msgstr "https://github.com/nekofar/virgool"
+
+#. Description of the plugin
+msgid "Virgool lets you publish posts automatically to a Virgool profile."
+msgstr "ویرگول امکان انتشار خودکار مطالب را در پرو فایل ویرگول شما فراهم می کند.  "
+
+#. Author of the plugin
+msgid "Milad Nekofar"
+msgstr "میلاد نکوفر"
+
+#. Author URI of the plugin
+msgid "https://milad.nekofar.com/"
+msgstr "https://milad.nekofar.com/"
+
+#: includes/class-virgool-api.php:67
+msgid "Login to the virgool api has been failed."
+msgstr ", ناموفق بود."
+
+#: includes/class-virgool-api.php:94
+msgid "Retrieve user info has been failed."
+msgstr "دریافت اطلاعات کاربر ناموفق بود."
+
+#: includes/class-virgool-api.php:112 includes/class-virgool-api.php:144
+msgid "Wrong post status has been selected."
+msgstr "وضعیت پست انتخاب شده صحیح نیست."
+
+#: includes/class-virgool-api.php:125
+msgid "Retrieve user posts has been failed."
+msgstr "دریافت ارسال های کاربر ناموفق بود."
+
+#: includes/class-virgool-api.php:167
+msgid "Create user post has been failed."
+msgstr "ایجاد پست جدید برای کاربر ناموفق بود."
