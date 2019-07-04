@@ -305,4 +305,15 @@ class Virgool_Admin {
 		return $input;
 	}
 
+	/**
+	 * Cross posts to the Virgool on save posts
+	 *
+	 * @param int     $post_ID Post ID.
+	 * @param WP_Post $post Post object.
+	 *
+	 * @since 1.0.0
+	 */
+	public function save_post( $post_ID, $post ) {
+
+	}
 }

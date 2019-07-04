@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -154,6 +153,7 @@ class Virgool {
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_settings_menu' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
+		$this->loader->add_action( 'save_post', $plugin_admin, 'save_post', 10, 2 );
 	}
 
 	/**
