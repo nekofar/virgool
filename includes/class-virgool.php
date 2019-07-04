@@ -134,7 +134,7 @@ class Virgool {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Virgool_i18n();
+		$plugin_i18n = new Virgool_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 

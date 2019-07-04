@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -24,7 +23,7 @@
  * @subpackage Virgool/includes
  * @author     Milad Nekofar <milad@nekofar.com>
  */
-class Virgool_i18n {
+class Virgool_I18n {
 
 
 	/**

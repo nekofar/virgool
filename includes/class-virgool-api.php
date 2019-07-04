@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the api communications functionality
  *
@@ -45,8 +44,8 @@ class Virgool_Api {
 	/**
 	 * Login using username and passwords and put token to the headers for future requests
 	 *
-	 * @param    $username
-	 * @param    $password
+	 * @param    string $username username of virgool account.
+	 * @param    string $password password of virgool account.
 	 *
 	 * @return   WP_Error|bool
 	 * @since    1.0.0
@@ -107,7 +106,7 @@ class Virgool_Api {
 	/**
 	 * Retrive current user posts based on their publish status.
 	 *
-	 * @param string $status
+	 * @param string $status status of posts on virgool to filter them.
 	 *
 	 * @return   WP_Error|array
 	 * @since    1.0.0
@@ -141,8 +140,8 @@ class Virgool_Api {
 	/**
 	 * Create a new published or draft post using array of data for current user.
 	 *
-	 * @param array  $data
-	 * @param string $status
+	 * @param array  $data post data for virgool.
+	 * @param string $status status of cross post.
 	 *
 	 * @return   WP_Error|array
 	 * @since    1.0.0
