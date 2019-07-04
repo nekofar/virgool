@@ -53,12 +53,15 @@ class Virgool_Api {
 	 */
 	public function login( $username, $password ) {
 
-		$response = wp_remote_post( $this->base_url . '/login', [
-			'body' => [
-				'username' => $username,
-				'password' => $password
+		$response = wp_remote_post(
+			$this->base_url . '/login',
+			[
+				'body' => [
+					'username' => $username,
+					'password' => $password,
+				],
 			]
-		] );
+		);
 
 		$body = wp_remote_retrieve_body( $response );
 		$data = json_decode( $body, true );
@@ -83,9 +86,12 @@ class Virgool_Api {
 	 */
 	public function retrieve_user_info() {
 
-		$response = wp_remote_get( $this->base_url . '/user/info', [
-			'headers' => $this->headers
-		] );
+		$response = wp_remote_get(
+			$this->base_url . '/user/info',
+			[
+				'headers' => $this->headers,
+			]
+		);
 
 		$body = wp_remote_retrieve_body( $response );
 		$data = json_decode( $body, true );
@@ -108,15 +114,18 @@ class Virgool_Api {
 	 */
 	public function retrieve_user_posts( $status = 'draft' ) {
 
-		if ( ! in_array( $status, [ 'draft', 'publish' ] ) ) {
+		if ( ! in_array( $status, [ 'draft', 'publish' ], true ) ) {
 			return new WP_Error( 'retrieve_user_posts_status', __( 'Wrong post status has been selected.', 'virgool' ) );
 		}
 
-		$status = $status == 'publish' ? 'published' : 'drafts';
+		$status = 'publish' === $status ? 'published' : 'drafts';
 
-		$response = wp_remote_get( $this->base_url . '/posts/' . $status, [
-			'headers' => $this->headers
-		] );
+		$response = wp_remote_get(
+			$this->base_url . '/posts/' . $status,
+			[
+				'headers' => $this->headers,
+			]
+		);
 
 		$body = wp_remote_retrieve_body( $response );
 		$data = json_decode( $body, true );
@@ -132,7 +141,7 @@ class Virgool_Api {
 	/**
 	 * Create a new published or draft post using array of data for current user.
 	 *
-	 * @param array $data
+	 * @param array  $data
 	 * @param string $status
 	 *
 	 * @return   WP_Error|array
@@ -140,28 +149,30 @@ class Virgool_Api {
 	 */
 	public function create_user_post( $data = [], $status = 'draft' ) {
 
-		if ( ! in_array( $status, [ 'draft', 'publish' ] ) ) {
+		if ( in_array( $status, [ 'draft', 'publish' ], true ) ) {
 			return new WP_Error( 'create_user_post_status', __( 'Wrong post status has been selected.', 'virgool' ) );
 		}
 
 		$data = [
-			"hash"           => $data['hash'],
-			"title"          => $data['title'],
-			"tag"            => $data['tag'],
-			"body"           => $data['body'],
-			"primary_img"    => $data['primary_img'],
-			"post_id"        => "",
-			"og_description" => null,
+			'hash'           => $data['hash'],
+			'title'          => $data['title'],
+			'tag'            => $data['tag'],
+			'body'           => $data['body'],
+			'primary_img'    => $data['primary_img'],
+			'post_id'        => '',
+			'og_description' => null,
 		];
 
-		$response = wp_remote_post( $this->base_url . '/editor/' . $status, [
-			'headers' => $this->headers,
-			'body'    => json_encode( $data ),
-		] );
+		$response = wp_remote_post(
+			$this->base_url . '/editor/' . $status,
+			[
+				'headers' => $this->headers,
+				'body'    => wp_json_encode( $data ),
+			]
+		);
 
 		$body = wp_remote_retrieve_body( $response );
 		$data = json_decode( $body, true );
-		var_dump( $response );
 
 		if ( empty( $body ) || ! $data['success'] ) {
 			return new WP_Error( 'create_user_post', __( 'Create user post has been failed.', 'virgool' ) );

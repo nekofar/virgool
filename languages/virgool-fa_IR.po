@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virgool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
-"POT-Creation-Date: 2019-07-02T23:17:17+00:00\n"
-"PO-Revision-Date: 2019-07-03 03:53+0430\n"
+"POT-Creation-Date: 2019-07-04T17:00:31+00:00\n"
+"PO-Revision-Date: 2019-07-04 15:05+0430\n"
 "Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -17,8 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 
 #. Plugin Name of the plugin
+#: admin/class-virgool-admin.php:66
 msgid "Virgool"
-msgstr "ویرگول"
+msgstr "تنظیمات ویرگول"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/nekofar/virgool"
@@ -26,7 +27,8 @@ msgstr "https://github.com/nekofar/virgool"
 
 #. Description of the plugin
 msgid "Virgool lets you publish posts automatically to a Virgool profile."
-msgstr "ویرگول امکان انتشار خودکار مطالب را در پرو فایل ویرگول شما فراهم می کند.  "
+msgstr ""
+"ویرگول امکان انتشار خودکار مطالب را در پرو فایل ویرگول شما فراهم می کند."
 
 #. Author of the plugin
 msgid "Milad Nekofar"
@@ -36,22 +38,82 @@ msgstr "میلاد نکوفر"
 msgid "https://milad.nekofar.com/"
 msgstr "https://milad.nekofar.com/"
 
-#: includes/class-virgool-api.php:67
-msgid "Login to the virgool api has been failed."
-msgstr ", ناموفق بود."
+#: admin/class-virgool-admin.php:67
+msgid "Virgool Settings"
+msgstr "ویرگول"
 
-#: includes/class-virgool-api.php:94
+#: admin/class-virgool-admin.php:102
+msgid "Login Information"
+msgstr "اطلاعات ورود"
+
+#: admin/class-virgool-admin.php:109
+msgid "Publish Settings"
+msgstr "تنظیمات انتشار"
+
+#: admin/class-virgool-admin.php:116
+msgid "Username"
+msgstr "نام کاربری"
+
+#: admin/class-virgool-admin.php:122
+msgid "The username you use to enter the Virgool."
+msgstr "نام کاربری که برای ورود به ویرگول استفاده می کنید."
+
+#: admin/class-virgool-admin.php:128
+msgid "Password"
+msgstr "رمز عبور"
+
+#: admin/class-virgool-admin.php:134
+msgid "The password you use to enter the Virgool."
+msgstr "رمز عبوری که برای ورود به ویرگول استفاده می کنید."
+
+#: admin/class-virgool-admin.php:140
+msgid "Status"
+msgstr "وضعیت"
+
+#: admin/class-virgool-admin.php:146
+msgid "Default status of the publication of the contents sent to the comma."
+msgstr "وضعیت پیش فرض انتشار مطالب ارسال شده به ویرگول."
+
+#: admin/class-virgool-admin.php:158
+msgid ""
+"This plugin uses your login information to communicate with the Virgool. "
+"Please enter your login information as requested."
+msgstr ""
+"این افزونه برای ارتباط با ویرگول از اطلاعات ورود شما استفاده می کند. لطفا "
+"اطلاعات ورود خواسته شده را وارد کنید."
+
+#: admin/class-virgool-admin.php:167
+msgid ""
+"Using this section, you can choose the options for publishing the content in "
+"the Virgool."
+msgstr ""
+"با استفاده از این بخش، می توانید گزینه هایی را برای انتشار محتوا در ویرگول "
+"انتخاب کنید."
+
+#: admin/class-virgool-admin.php:244
+msgid "Draft"
+msgstr "پیش نویس"
+
+#: admin/class-virgool-admin.php:245
+msgid "Published"
+msgstr "منتشر شده"
+
+#: includes/class-virgool-api.php:70
+msgid "Login to the virgool api has been failed."
+msgstr "ورود به ویرگول ناموفق بود."
+
+#: includes/class-virgool-api.php:100
 msgid "Retrieve user info has been failed."
 msgstr "دریافت اطلاعات کاربر ناموفق بود."
 
-#: includes/class-virgool-api.php:112 includes/class-virgool-api.php:144
+#: includes/class-virgool-api.php:118 includes/class-virgool-api.php:153
 msgid "Wrong post status has been selected."
 msgstr "وضعیت پست انتخاب شده صحیح نیست."
 
-#: includes/class-virgool-api.php:125
+#: includes/class-virgool-api.php:134
 msgid "Retrieve user posts has been failed."
 msgstr "دریافت ارسال های کاربر ناموفق بود."
 
-#: includes/class-virgool-api.php:167
+#: includes/class-virgool-api.php:178
 msgid "Create user post has been failed."
 msgstr "ایجاد پست جدید برای کاربر ناموفق بود."

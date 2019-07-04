@@ -152,6 +152,8 @@ class Virgool {
 
 		$plugin_admin = new Virgool_Admin( $this->get_plugin_name(), $this->get_version() );
 
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_settings_menu' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
 	}
 
 	/**
