@@ -1,0 +1,28 @@
+{
+  "name": "nekofar/virgool",
+  "description": "Virgool lets you publish posts automatically to a Virgool profile.",
+  "require-dev": {
+    "wp-cli/wp-cli": "^2.2",
+    "phpunit/phpunit": "8.2.4",
+    "codeception/codeception": "3.0.2",
+    "lucatume/wp-browser": "^2.2",
+    "squizlabs/php_codesniffer": "*",
+    "wp-coding-standards/wpcs": "^2.1",
+    "friendsofphp/php-cs-fixer": "^2.15"
+  },
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Milad Nekofar",
+      "email": "milad@nekofar.com"
+    }
+  ],
+  "require": {
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/phpcs -s -p -n --ignore=/vendor/ --standard=WordPress --extensions=php .",
+    "phpcbf": "vendor/bin/phpcbf -p --ignore=/vendor/ --standard=WordPress --extensions=php .",
+    "post-install-cmd": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+    "post-update-cmd": "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs"
+  }
+}

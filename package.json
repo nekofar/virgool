@@ -1,6 +1,18 @@
 {
   "name": "@nekofar/virgool",
   "version": "1.0.0",
-  "dependencies": {
+  "dependencies": {},
+  "description": "Virgool lets you publish posts automatically to a Virgool profile.",
+  "repository": "git@github.com:nekofar/virgool.git",
+  "author": "Milad Nekofar <milad@nekofar.com>",
+  "license": "GPL-2.0+",
+  "scripts": {
+    "phpcs": "vendor/bin/composer phpcs",
+    "phpcbf": "vendor/bin/composer phpcbf",
+    "install": "vendor/bin/composer install",
+    "update": "vendor/bin/composer update",
+    "make-pot": "vendor/bin/wp i18n make-pot . languages/virgool.pot",
+    "update-po": "yarn make-pot && find languages -name '*.po' -exec msgmerge -vU {} languages/virgool.pot \\;",
+    "update-mo": "yarn update-po && find languages -name '*.po' -exec sh -c 'msgfmt -v -o `dirname {}`/`basename {} .po`.mo {}' \\;"
   }
 }
