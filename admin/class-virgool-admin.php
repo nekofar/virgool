@@ -186,8 +186,8 @@ class Virgool_Admin {
 		?>
 		<label for="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>">
 			<input type="text" size="40" value="<?php echo esc_html( $value ); ?>"
-				id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
-				name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
+					id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
+					name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
 			<p class="description">
 				<?php echo esc_html( $label ); ?>
 			</p>
@@ -218,8 +218,8 @@ class Virgool_Admin {
 		?>
 		<label for="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>">
 			<input type="password" size="40" value="<?php echo esc_html( $value ); ?>"
-				id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
-				name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
+					id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
+					name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
 			<p class="description">
 				<?php echo esc_html( $label ); ?>
 			</p>

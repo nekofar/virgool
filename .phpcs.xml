@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Virgool"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+
+    <description>A custom set of rules to check for a WPized WordPress project</description>
+
+    <!-- Strip the filepaths down to the relevant bit. -->
+    <arg name="basepath" value="./"/>
+
+    <!-- Check up to 8 files simultanously. -->
+    <arg name="parallel" value="8"/>
+
+    <!-- Only check the PHP files. JS files are checked separately with JSCS and JSHint. -->
+    <arg name="extensions" value="php"/>
+
+    <!-- Exclude the Composer Vendor directory. -->
+    <exclude-pattern>/vendor/*</exclude-pattern>
+
+    <!-- Exclude the Node Modules directory. -->
+    <exclude-pattern>/node_modules/*</exclude-pattern>
+
+    <!-- Include the WordPress ruleset, with exclusions. -->
+    <rule ref="WordPress">
+        <!-- Getting error on placeholder files, index.php -->
+        <exclude name="Squiz.Commenting.FileComment.SpacingAfterComment"/>
+    </rule>
+
+    <!--
+    Verify that the text_domain is set to the desired text-domain.
+    Multiple valid text domains can be provided as a comma-delimited list.
+    -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="virgool"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!--
+    Verify that everything in the global namespace is prefixed with a plugin specific prefix.
+    Multiple valid prefixes can be provided as a comma-delimited list.
+    -->
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="virgool"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!--
+    Verify that no WP functions are used which are deprecated or have been removed.
+    The minimum version set here should be in line with the minimum WP version
+    as set in the "Requires at least" tag in the readme.txt file.
+    -->
+    <rule ref="WordPress.WP.DeprecatedFunctions">
+        <properties>
+            <property name="minimum_supported_version" value="4.5"/>
+        </properties>
+    </rule>
+
+    <!-- Include sniffs for PHP cross-version compatibility. -->
+    <config name="testVersion" value="5.6-"/>
+
+    <rule ref="PHPCompatibilityWP">
+        <include-pattern>*\.php$</include-pattern>
+    </rule>
+
+</ruleset>

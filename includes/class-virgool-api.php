@@ -104,7 +104,7 @@ class Virgool_Api {
 	}
 
 	/**
-	 * Retrive current user posts based on their publish status.
+	 * Retrieve current user posts based on their publish status.
 	 *
 	 * @param string $status status of posts on virgool to filter them.
 	 *

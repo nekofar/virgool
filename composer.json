@@ -23,7 +23,7 @@
     "ext-openssl": "*"
   },
   "scripts": {
-    "phpcs": "vendor/bin/phpcs -s -p -n --ignore=/vendor/ --standard=WordPress --extensions=php .",
-    "phpcbf": "vendor/bin/phpcbf -p --ignore=/vendor/ --standard=WordPress --extensions=php ."
+    "phpcs": "vendor/bin/phpcs -s -p .",
+    "phpcbf": "vendor/bin/phpcbf -p ."
   }
 }
