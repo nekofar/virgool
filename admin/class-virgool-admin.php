@@ -63,8 +63,8 @@ class Virgool_Admin {
 
 		add_submenu_page(
 			'options-general.php',
-			__( 'Virgool', 'virgool' ),
 			__( 'Virgool Settings', 'virgool' ),
+			__( 'Virgool', 'virgool' ),
 			'manage_options',
 			'virgool',
 			[ $this, 'add_settings_page' ]

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-07-04T17:04:24+00:00\n"
+"POT-Creation-Date: 2019-07-06T23:26:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: virgool\n"
@@ -79,31 +79,33 @@ msgstr ""
 msgid "Using this section, you can choose the options for publishing the content in the Virgool."
 msgstr ""
 
-#: admin/class-virgool-admin.php:244
+#: admin/class-virgool-admin.php:248
+#: admin/class-virgool-admin.php:301
 msgid "Draft"
 msgstr ""
 
-#: admin/class-virgool-admin.php:245
+#: admin/class-virgool-admin.php:249
+#: admin/class-virgool-admin.php:302
 msgid "Published"
 msgstr ""
 
-#: includes/class-virgool-api.php:70
+#: includes/class-virgool-api.php:69
 msgid "Login to the virgool api has been failed."
 msgstr ""
 
-#: includes/class-virgool-api.php:100
+#: includes/class-virgool-api.php:99
 msgid "Retrieve user info has been failed."
 msgstr ""
 
-#: includes/class-virgool-api.php:118
-#: includes/class-virgool-api.php:153
+#: includes/class-virgool-api.php:117
+#: includes/class-virgool-api.php:152
 msgid "Wrong post status has been selected."
 msgstr ""
 
-#: includes/class-virgool-api.php:134
+#: includes/class-virgool-api.php:133
 msgid "Retrieve user posts has been failed."
 msgstr ""
 
-#: includes/class-virgool-api.php:178
+#: includes/class-virgool-api.php:177
 msgid "Create user post has been failed."
 msgstr ""

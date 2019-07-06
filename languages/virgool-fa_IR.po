@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virgool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
-"POT-Creation-Date: 2019-07-04T17:00:31+00:00\n"
+"POT-Creation-Date: 2019-07-06T23:24:55+00:00\n"
 "PO-Revision-Date: 2019-07-04 15:05+0430\n"
 "Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: admin/class-virgool-admin.php:66
 msgid "Virgool"
-msgstr "تنظیمات ویرگول"
+msgstr "ویرگول"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/nekofar/virgool"
@@ -40,7 +40,7 @@ msgstr "https://milad.nekofar.com/"
 
 #: admin/class-virgool-admin.php:67
 msgid "Virgool Settings"
-msgstr "ویرگول"
+msgstr "تنظیمات ویرگول"
 
 #: admin/class-virgool-admin.php:102
 msgid "Login Information"
@@ -90,30 +90,30 @@ msgstr ""
 "با استفاده از این بخش، می توانید گزینه هایی را برای انتشار محتوا در ویرگول "
 "انتخاب کنید."
 
-#: admin/class-virgool-admin.php:244
+#: admin/class-virgool-admin.php:248 admin/class-virgool-admin.php:301
 msgid "Draft"
 msgstr "پیش نویس"
 
-#: admin/class-virgool-admin.php:245
+#: admin/class-virgool-admin.php:249 admin/class-virgool-admin.php:302
 msgid "Published"
 msgstr "منتشر شده"
 
-#: includes/class-virgool-api.php:70
+#: includes/class-virgool-api.php:69
 msgid "Login to the virgool api has been failed."
 msgstr "ورود به ویرگول ناموفق بود."
 
-#: includes/class-virgool-api.php:100
+#: includes/class-virgool-api.php:99
 msgid "Retrieve user info has been failed."
 msgstr "دریافت اطلاعات کاربر ناموفق بود."
 
-#: includes/class-virgool-api.php:118 includes/class-virgool-api.php:153
+#: includes/class-virgool-api.php:117 includes/class-virgool-api.php:152
 msgid "Wrong post status has been selected."
 msgstr "وضعیت پست انتخاب شده صحیح نیست."
 
-#: includes/class-virgool-api.php:134
+#: includes/class-virgool-api.php:133
 msgid "Retrieve user posts has been failed."
 msgstr "دریافت ارسال های کاربر ناموفق بود."
 
-#: includes/class-virgool-api.php:178
+#: includes/class-virgool-api.php:177
 msgid "Create user post has been failed."
 msgstr "ایجاد پست جدید برای کاربر ناموفق بود."
