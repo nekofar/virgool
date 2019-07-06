@@ -18,6 +18,7 @@
     }
   ],
   "require": {
+    "ext-openssl": "*"
   },
   "scripts": {
     "phpcs": "vendor/bin/phpcs -s -p -n --ignore=/vendor/ --standard=WordPress --extensions=php .",
