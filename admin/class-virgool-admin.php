@@ -186,8 +186,8 @@ class Virgool_Admin {
 		?>
 		<label for="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>">
 			<input type="text" size="40" value="<?php echo esc_html( $value ); ?>"
-					id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
-					name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
+				id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
+				name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
 			<p class="description">
 				<?php echo esc_html( $label ); ?>
 			</p>
@@ -218,8 +218,8 @@ class Virgool_Admin {
 		?>
 		<label for="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>">
 			<input type="password" size="40" value="<?php echo esc_html( $value ); ?>"
-					id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
-					name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
+				id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
+				name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>"/>
 			<p class="description">
 				<?php echo esc_html( $label ); ?>
 			</p>
@@ -251,7 +251,7 @@ class Virgool_Admin {
 		?>
 		<label for="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>">
 			<select id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
-					name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>">
+				name="<?php echo esc_html( $this->plugin_name . '_options[' . $id . ']' ); ?>">
 				<?php foreach ( $select_options as $value => $option ) : ?>
 					<?php $selected = selected( $selected_option === $value, true, false ); ?>
 					<option value="<?php echo esc_html( $value ); ?>"<?php echo esc_html( $selected ); ?>>
@@ -272,6 +272,7 @@ class Virgool_Admin {
 	 * @param array $input Input value came from setting field.
 	 *
 	 * @return array
+	 *
 	 * @since    1.0.0
 	 */
 	public function callback_validate_options( $input ) {
