@@ -13,7 +13,9 @@ services:
   wordpress:
     depends_on:
       - mariadb
-    image: wordpress:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     ports:
       - 8000:80
     volumes:
