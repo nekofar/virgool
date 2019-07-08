@@ -11,10 +11,11 @@
     "phpcbf": "vendor/bin/phpcbf",
     "install": "vendor/bin/composer install",
     "update": "vendor/bin/composer update",
-    "readme": "curl -L https://raw.githubusercontent.com/fumikito/wp-readme/master/wp-readme.php | php",
+    "readme": "curl -s -L https://raw.githubusercontent.com/fumikito/wp-readme/master/wp-readme.php | php",
     "make-pot": "vendor/bin/wp i18n make-pot . languages/virgool.pot",
     "update-po": "yarn make-pot && find languages -name '*.po' -exec msgmerge -vUN {} languages/virgool.pot \\;",
     "update-mo": "yarn update-po && find languages -name '*.po' -exec sh -c 'msgfmt -v -o `dirname {}`/`basename {} .po`.mo {}' \\;",
+    "dist-prepare": "yarn update && yarn phpcs && yarn phpcbf && yarn readme && yarn update-mo",
     "dist-archive": "vendor/bin/wp dist-archive ."
   }
 }
