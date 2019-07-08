@@ -13,6 +13,7 @@
     "update": "vendor/bin/composer update",
     "make-pot": "vendor/bin/wp i18n make-pot . languages/virgool.pot",
     "update-po": "yarn make-pot && find languages -name '*.po' -exec msgmerge -vU {} languages/virgool.pot \\;",
-    "update-mo": "yarn update-po && find languages -name '*.po' -exec sh -c 'msgfmt -v -o `dirname {}`/`basename {} .po`.mo {}' \\;"
+    "update-mo": "yarn update-po && find languages -name '*.po' -exec sh -c 'msgfmt -v -o `dirname {}`/`basename {} .po`.mo {}' \\;",
+    "dist-archive": "vendor/bin/wp dist-archive ."
   }
 }

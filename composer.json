@@ -3,6 +3,7 @@
   "description": "Virgool lets you publish posts automatically to a Virgool profile.",
   "require-dev": {
     "wp-cli/wp-cli": "^2.2",
+    "wp-cli/dist-archive-command": "v2.0.0",
     "phpunit/phpunit": "8.2.4",
     "codeception/codeception": "3.0.2",
     "lucatume/wp-browser": "^2.2",
