@@ -4,10 +4,17 @@
 
     <description>A custom set of rules to check for a WPized WordPress project</description>
 
-    <!-- Strip the filepaths down to the relevant bit. -->
+	<!-- What to scan -->
+	<file>.</file>
+
+	<!-- Show sniff and progress -->
+	<arg value="sp"/>
+	<arg name="colors"/>
+
+	<!-- Strip the filepaths down to the relevant bit. -->
     <arg name="basepath" value="./"/>
 
-    <!-- Check up to 8 files simultanously. -->
+	<!-- Enables parallel processing when available for faster results. -->
     <arg name="parallel" value="8"/>
 
     <!-- Only check the PHP files. JS files are checked separately with JSCS and JSHint. -->
@@ -59,6 +66,12 @@
             <property name="minimum_supported_version" value="4.5"/>
         </properties>
     </rule>
+
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<properties>
+			<property name="blank_line_check" value="true"/>
+		</properties>
+	</rule>
 
     <!-- Include sniffs for PHP cross-version compatibility. -->
     <config name="testVersion" value="5.6-"/>
