@@ -6,8 +6,8 @@ Requires at least: 4.7.0
 Tested up to: 5.2.2  
 Requires PHP: 5.6.4  
 Stable tag: 1.0.0  
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+License: GPL-2.0+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Publish posts automatically to a Virgool profile.
 
