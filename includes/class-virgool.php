@@ -100,23 +100,23 @@ class Virgool {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-virgool-loader.php';
+		require_once VIRGOOL_PLUGIN_DIR . 'includes/class-virgool-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-virgool-i18n.php';
+		require_once VIRGOOL_PLUGIN_DIR . 'includes/class-virgool-i18n.php';
 
 		/**
 		 * The class responsible for communicate to the virgool using their api.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-virgool-api.php';
+		require_once VIRGOOL_PLUGIN_DIR . 'includes/class-virgool-api.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-virgool-admin.php';
+		require_once VIRGOOL_PLUGIN_DIR . 'admin/class-virgool-admin.php';
 
 		$this->loader = new Virgool_Loader();
 	}
@@ -146,6 +146,7 @@ class Virgool {
 	private function define_admin_hooks() {
 		$plugin_admin = new Virgool_Admin( $this->get_plugin_name(), $this->get_version() );
 
+		$this->loader->add_action( 'plugin_action_links', $plugin_admin, 'add_action_links', 10, 2 );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_settings_menu' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
 		$this->loader->add_action( 'publish_post', $plugin_admin, 'publish_post', 10, 2 );

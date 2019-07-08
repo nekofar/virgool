@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virgool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
-"POT-Creation-Date: 2019-07-08T12:27:19+00:00\n"
+"POT-Creation-Date: 2019-07-08T16:00:12+00:00\n"
 "PO-Revision-Date: 2019-07-04 15:05+0430\n"
 "Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 
 #. Plugin Name of the plugin
-#: admin/class-virgool-admin.php:64
+#: admin/class-virgool-admin.php:92
 msgid "Virgool"
 msgstr "ویرگول"
 
@@ -38,43 +38,51 @@ msgstr "میلاد نکوفر"
 msgid "https://milad.nekofar.com/"
 msgstr "https://milad.nekofar.com/"
 
-#: admin/class-virgool-admin.php:63
+#: admin/class-virgool-admin.php:73
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: admin/class-virgool-admin.php:74
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: admin/class-virgool-admin.php:91
 msgid "Virgool Settings"
 msgstr "تنظیمات ویرگول"
 
-#: admin/class-virgool-admin.php:95
+#: admin/class-virgool-admin.php:123
 msgid "Login Information"
 msgstr "اطلاعات ورود"
 
-#: admin/class-virgool-admin.php:102
+#: admin/class-virgool-admin.php:130
 msgid "Publish Settings"
 msgstr "تنظیمات انتشار"
 
-#: admin/class-virgool-admin.php:109
+#: admin/class-virgool-admin.php:137
 msgid "Username"
 msgstr "نام کاربری"
 
-#: admin/class-virgool-admin.php:115
+#: admin/class-virgool-admin.php:143
 msgid "The username you use to enter the Virgool."
 msgstr "نام کاربری که برای ورود به ویرگول استفاده می کنید."
 
-#: admin/class-virgool-admin.php:121
+#: admin/class-virgool-admin.php:149
 msgid "Password"
 msgstr "رمز عبور"
 
-#: admin/class-virgool-admin.php:127
+#: admin/class-virgool-admin.php:155
 msgid "The password you use to enter the Virgool."
 msgstr "رمز عبوری که برای ورود به ویرگول استفاده می کنید."
 
-#: admin/class-virgool-admin.php:133
+#: admin/class-virgool-admin.php:161
 msgid "Status"
 msgstr "وضعیت"
 
-#: admin/class-virgool-admin.php:139
+#: admin/class-virgool-admin.php:167
 msgid "Default status of the publication of the contents sent to the comma."
 msgstr "وضعیت پیش فرض انتشار مطالب ارسال شده به ویرگول."
 
-#: admin/class-virgool-admin.php:150
+#: admin/class-virgool-admin.php:178
 msgid ""
 "This plugin uses your login information to communicate with the Virgool. "
 "Please enter your login information as requested."
@@ -82,7 +90,7 @@ msgstr ""
 "این افزونه برای ارتباط با ویرگول از اطلاعات ورود شما استفاده می کند. لطفا "
 "اطلاعات ورود خواسته شده را وارد کنید."
 
-#: admin/class-virgool-admin.php:159
+#: admin/class-virgool-admin.php:187
 msgid ""
 "Using this section, you can choose the options for publishing the content in "
 "the Virgool."
@@ -90,11 +98,11 @@ msgstr ""
 "با استفاده از این بخش، می توانید گزینه هایی را برای انتشار محتوا در ویرگول "
 "انتخاب کنید."
 
-#: admin/class-virgool-admin.php:236 admin/class-virgool-admin.php:288
+#: admin/class-virgool-admin.php:264 admin/class-virgool-admin.php:316
 msgid "Draft"
 msgstr "پیش نویس"
 
-#: admin/class-virgool-admin.php:237 admin/class-virgool-admin.php:289
+#: admin/class-virgool-admin.php:265 admin/class-virgool-admin.php:317
 msgid "Published"
 msgstr "منتشر شده"
 

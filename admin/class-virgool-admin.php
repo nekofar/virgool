@@ -53,6 +53,34 @@ class Virgool_Admin {
 	}
 
 	/**
+	 * Add the action links displayed for plugin in the Plugins list table.
+	 *
+	 * @param string[] $actions An array of plugin action links.
+	 * @param string   $plugin_file Path to the plugin file relative to the plugins directory.
+	 *
+	 * @return array
+	 */
+	public function add_action_links( $actions, $plugin_file ) {
+		static $plugin;
+
+		if ( ! isset( $plugin ) ) {
+			$plugin = plugin_basename( VIRGOOL_PLUGIN_FILE );
+		}
+
+		if ( $plugin === $plugin_file ) {
+			$actions = array_merge(
+				[
+					'settings' => '<a href="options-general.php?page=virgool">' . __( 'Settings', 'virgool' ) . '</a>',
+					'support'  => '<a href="http://github.com/nekofar/virgool/issues" target="_blank">' . __( 'Support', 'virgool' ) . '</a>',
+				],
+				$actions
+			);
+		}
+
+		return $actions;
+	}
+
+	/**
 	 * Add a sub menu under settings for plugin specific settings
 	 *
 	 * @since    1.0.0
@@ -74,7 +102,7 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function add_settings_page() {
-		require_once plugin_dir_path( __FILE__ ) . 'partials/virgool-admin-settings.php';
+		require_once VIRGOOL_PLUGIN_DIR . 'admin/partials/virgool-admin-settings.php';
 	}
 
 

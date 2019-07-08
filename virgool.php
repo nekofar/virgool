@@ -35,10 +35,25 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'VIRGOOL_VERSION', '1.0.0' );
 
 /**
- * The core plugin class that is used to define internationalization,
+ * Absolute path for the plugin file.
+ */
+define( 'VIRGOOL_PLUGIN_FILE', __FILE__ );
+
+/**
+ * Absolute path for the plugin directory.
+ */
+define( 'VIRGOOL_PLUGIN_DIR', dirname( __FILE__ ) . '/' );
+
+/**
+ * The plugin URL root.
+ */
+define( 'VIRGOOL_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
+
+/**
+ * The core plugin class that 5is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-virgool.php';
+require_once VIRGOOL_PLUGIN_DIR . 'includes/class-virgool.php';
 
 /**
  * Begins execution of the plugin.
