@@ -46,10 +46,8 @@ class Virgool_Loader {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-
 		$this->actions = [];
 		$this->filters = [];
-
 	}
 
 	/**
@@ -83,7 +81,6 @@ class Virgool_Loader {
 	 * @access   private
 	 */
 	private function add( $hooks, $hook, $component, $callback, $priority, $accepted_args ) {
-
 		$hooks[] = [
 			'hook'          => $hook,
 			'component'     => $component,
@@ -93,7 +90,6 @@ class Virgool_Loader {
 		];
 
 		return $hooks;
-
 	}
 
 	/**
@@ -117,7 +113,6 @@ class Virgool_Loader {
 	 * @since    1.0.0
 	 */
 	public function run() {
-
 		foreach ( $this->filters as $hook ) {
 			add_filter(
 				$hook['hook'],
@@ -141,7 +136,6 @@ class Virgool_Loader {
 				$hook['accepted_args']
 			);
 		}
-
 	}
 
 }

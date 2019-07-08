@@ -76,7 +76,6 @@ class Virgool {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-
 	}
 
 	/**
@@ -120,7 +119,6 @@ class Virgool {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-virgool-admin.php';
 
 		$this->loader = new Virgool_Loader();
-
 	}
 
 	/**
@@ -133,11 +131,9 @@ class Virgool {
 	 * @access   private
 	 */
 	private function set_locale() {
-
 		$plugin_i18n = new Virgool_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -148,7 +144,6 @@ class Virgool {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-
 		$plugin_admin = new Virgool_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_settings_menu' );

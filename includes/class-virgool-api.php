@@ -51,7 +51,6 @@ class Virgool_Api {
 	 * @since    1.0.0
 	 */
 	public function login( $username, $password ) {
-
 		$response = wp_remote_post(
 			$this->base_url . '/login',
 			[
@@ -84,7 +83,6 @@ class Virgool_Api {
 	 * @since    1.0.0
 	 */
 	public function retrieve_user_info() {
-
 		$response = wp_remote_get(
 			$this->base_url . '/user/info',
 			[
@@ -100,7 +98,6 @@ class Virgool_Api {
 		}
 
 		return $data['user'];
-
 	}
 
 	/**
@@ -112,7 +109,6 @@ class Virgool_Api {
 	 * @since    1.0.0
 	 */
 	public function retrieve_user_posts( $status = 'draft' ) {
-
 		if ( ! in_array( $status, [ 'draft', 'publish' ], true ) ) {
 			return new WP_Error( 'retrieve_user_posts_status', __( 'Wrong post status has been selected.', 'virgool' ) );
 		}
@@ -134,7 +130,6 @@ class Virgool_Api {
 		}
 
 		return $data['data'];
-
 	}
 
 	/**
@@ -147,7 +142,6 @@ class Virgool_Api {
 	 * @since    1.0.0
 	 */
 	public function create_user_post( $data = [], $status = 'draft' ) {
-
 		if ( in_array( $status, [ 'draft', 'publish' ], true ) === false ) {
 			return new WP_Error( 'create_user_post_status', __( 'Wrong post status has been selected.', 'virgool' ) );
 		}

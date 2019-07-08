@@ -48,10 +48,8 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function __construct( $plugin_name, $version ) {
-
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
-
 	}
 
 	/**
@@ -60,7 +58,6 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function add_settings_menu() {
-
 		add_submenu_page(
 			'options-general.php',
 			__( 'Virgool Settings', 'virgool' ),
@@ -69,7 +66,6 @@ class Virgool_Admin {
 			'virgool',
 			[ $this, 'add_settings_page' ]
 		);
-
 	}
 
 	/**
@@ -78,9 +74,7 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function add_settings_page() {
-
 		require_once plugin_dir_path( __FILE__ ) . 'partials/virgool-admin-settings.php';
-
 	}
 
 
@@ -90,7 +84,6 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function register_settings() {
-
 		register_setting(
 			$this->plugin_name . '_options',
 			$this->plugin_name . '_options',
@@ -146,7 +139,6 @@ class Virgool_Admin {
 				'label' => __( 'Default status of the publication of the contents sent to the comma.', 'virgool' ),
 			]
 		);
-
 	}
 
 	/**
@@ -175,7 +167,6 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function callback_field_text( $args ) {
-
 		$options = get_option( $this->plugin_name . '_options' );
 
 		$id    = isset( $args['id'] ) ? esc_html( $args['id'] ) : '';
@@ -203,7 +194,6 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function callback_field_password( $args ) {
-
 		$options = get_option( $this->plugin_name . '_options' );
 
 		$id    = isset( $args['id'] ) ? $args['id'] : '';
@@ -225,7 +215,6 @@ class Virgool_Admin {
 			</p>
 		</label>
 		<?php
-
 	}
 
 	/**
@@ -236,7 +225,6 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function callback_field_select( $args ) {
-
 		$options = get_option( $this->plugin_name . '_options' );
 
 		$id    = isset( $args['id'] ) ? $args['id'] : '';
@@ -276,7 +264,6 @@ class Virgool_Admin {
 	 * @since    1.0.0
 	 */
 	public function callback_validate_options( $input ) {
-
 		if ( isset( $input['username'] ) ) {
 			$input['username'] = sanitize_text_field(
 				$input['username']
