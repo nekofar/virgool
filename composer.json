@@ -2,16 +2,16 @@
   "name": "nekofar/virgool",
   "description": "Virgool lets you publish posts automatically to a Virgool profile.",
   "require-dev": {
-    "wp-cli/wp-cli": "^2.2",
-    "wp-cli/dist-archive-command": "v2.0.0",
-    "phpunit/phpunit": "8.2.4",
     "codeception/codeception": "3.0.2",
-    "lucatume/wp-browser": "^2.2",
-    "squizlabs/php_codesniffer": "*",
-    "wp-coding-standards/wpcs": "^2.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
     "friendsofphp/php-cs-fixer": "^2.15",
+    "lucatume/wp-browser": "^2.2",
     "phpcompatibility/phpcompatibility-wp": "*",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+    "phpunit/phpunit": "^8.2",
+    "squizlabs/php_codesniffer": "*",
+    "wp-cli/dist-archive-command": "v2.0.0",
+    "wp-cli/wp-cli": "^2.2",
+    "wp-coding-standards/wpcs": "^2.1"
   },
   "license": "GPL-2.0+",
   "authors": [
