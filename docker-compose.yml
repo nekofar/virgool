@@ -19,15 +19,34 @@ services:
     ports:
       - 8000:80
     volumes:
+      - wordpress:/var/www/html
       - .:/var/www/html/wp-content/plugins/virgool
     environment:
+      XDEBUG_CONFIG: remote_host=$XDEBUG_REMOTE_HOST
       WORDPRESS_DB_HOST: mariadb:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 1
       WORDPRESS_CONFIG_EXTRA: |
+        define( 'SCRIPT_DEBUG', true );
         /* Set default language */
-        define('WPLANG', 'fa_IR');
+        define( 'WPLANG', 'fa_IR' );
+
+  wordpress-cli:
+    depends_on:
+      - mariadb
+      - wordpress
+    image: wordpress:cli
+    user: xfs
+    volumes:
+      - wordpress:/var/www/html
+      - .:/var/www/html/wp-content/plugins/virgool
+    command:
+      - --info
+
+volumes:
+  wordpress:
 
 networks:
   default:
