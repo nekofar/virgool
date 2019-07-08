@@ -24,7 +24,5 @@
     "ext-openssl": "*"
   },
   "scripts": {
-    "phpcs": "vendor/bin/phpcs -s -p .",
-    "phpcbf": "vendor/bin/phpcbf -p ."
   }
 }

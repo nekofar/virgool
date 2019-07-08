@@ -7,8 +7,8 @@
   "author": "Milad Nekofar <milad@nekofar.com>",
   "license": "GPL-2.0+",
   "scripts": {
-    "phpcs": "vendor/bin/composer phpcs",
-    "phpcbf": "vendor/bin/composer phpcbf",
+    "phpcs": "vendor/bin/phpcs",
+    "phpcbf": "vendor/bin/phpcbf",
     "install": "vendor/bin/composer install",
     "update": "vendor/bin/composer update",
     "make-pot": "vendor/bin/wp i18n make-pot . languages/virgool.pot",
