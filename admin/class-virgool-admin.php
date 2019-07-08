@@ -329,6 +329,81 @@ class Virgool_Admin {
 	}
 
 	/**
+	 * Add custom actions to the list of Bulk Actions drop-down.
+	 *
+	 * @param string[] $actions An array of the available bulk actions.
+	 *
+	 * @return string[] $actions An array of the available bulk actions.
+	 */
+	public function add_bulk_actions( $actions ) {
+		$actions = array_merge(
+			$actions,
+			[
+				'cross_post_virgool' => __( 'Cross post to the Virgool', 'virgool' ),
+			]
+		);
+
+		return $actions;
+	}
+
+	/**
+	 * Fires when a custom bulk action should be handled.
+	 *
+	 * @param string $redirect_to The redirect URL.
+	 * @param string $doaction The action being taken.
+	 * @param array  $post_ids The posts ids to take the action on.
+	 *
+	 * @return mixed
+	 */
+	public function handle_bulk_actions( $redirect_to, $doaction, $post_ids ) {
+		if ( in_array( $doaction, [ 'cross_post_virgool' ], true ) === false ) {
+			return $redirect_to;
+		}
+
+		foreach ( $post_ids as $post_id ) {
+			$post = get_post( $post_id );
+
+			// Send post to the virgool and receive created post info.
+			$virgool_post = $this->cross_post( $post );
+
+			// Save virgool post data associated with the post.
+			update_post_meta( $post_id, 'virgool_post', $virgool_post );
+		}
+
+		$redirect_to = add_query_arg( 'bulk_cross_posts', count( $post_ids ), $redirect_to );
+
+		// Create an nonce, and add it as a query var in a link to perform an action.
+		$redirect_to = add_query_arg( '_wpnonce', wp_create_nonce( 'bulk_cross_posts' ), $redirect_to );
+
+		return $redirect_to;
+	}
+
+	/**
+	 * Print bulk actions notices.
+	 */
+	public function bulk_action_admin_notices() {
+		if ( ! isset( $_GET['_wpnonce'] ) ) {
+			return;
+		}
+
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'bulk_cross_posts' ) ) {
+			return;
+		}
+
+		if ( empty( $_GET['bulk_cross_posts'] ) === false ) {
+			$crossed_count = intval( $_GET['bulk_cross_posts'] );
+			printf(
+				sprintf(
+					'<div id="message" class="updated fade">%s</div>',
+					/* translators: %s: number of posts crossed. */
+					esc_html( _n( 'Crossed %s post to Virgool.', 'Crossed %s posts to Virgool.', esc_html( $crossed_count ), 'virgool' ) )
+				),
+				esc_html( $crossed_count )
+			);
+		}
+	}
+
+	/**
 	 * Cross posts to the Virgool on publish regular posts
 	 *
 	 * @param int     $post_ID Post ID.

@@ -146,9 +146,15 @@ class Virgool {
 	private function define_admin_hooks() {
 		$plugin_admin = new Virgool_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'plugin_action_links', $plugin_admin, 'add_action_links', 10, 2 );
+		$this->loader->add_filter( 'plugin_action_links', $plugin_admin, 'add_action_links', 10, 2 );
+
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_settings_menu' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
+
+		$this->loader->add_filter( 'bulk_actions-edit-post', $plugin_admin, 'add_bulk_actions', 10, 1 );
+		$this->loader->add_filter( 'handle_bulk_actions-edit-post', $plugin_admin, 'handle_bulk_actions', 10, 3 );
+		$this->loader->add_filter( 'admin_notices', $plugin_admin, 'bulk_action_admin_notices', 10 );
+
 		$this->loader->add_action( 'publish_post', $plugin_admin, 'publish_post', 10, 2 );
 	}
 

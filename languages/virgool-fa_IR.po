@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virgool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
-"POT-Creation-Date: 2019-07-08T16:00:12+00:00\n"
+"POT-Creation-Date: 2019-07-08T19:42:25+00:00\n"
 "PO-Revision-Date: 2019-07-04 15:05+0430\n"
 "Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
 "Language-Team: \n"
@@ -105,6 +105,17 @@ msgstr "پیش نویس"
 #: admin/class-virgool-admin.php:265 admin/class-virgool-admin.php:317
 msgid "Published"
 msgstr "منتشر شده"
+
+#: admin/class-virgool-admin.php:342
+msgid "Cross post to the Virgool"
+msgstr "ارسال متقابل به ویرگول"
+
+#. translators: %s: number of posts crossed.
+#: admin/class-virgool-admin.php:399
+msgid "Crossed %s post to Virgool."
+msgid_plural "Crossed %s posts to Virgool."
+msgstr[0] "%s نوشته متقابلا به ویرگول ارسال شد."
+msgstr[1] "%s نوشته متقابلا به ویرگول ارسال شد."
 
 #: includes/class-virgool-api.php:68
 msgid "Login to the virgool api has been failed."

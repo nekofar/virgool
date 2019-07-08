@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-07-08T16:48:04+00:00\n"
+"POT-Creation-Date: 2019-07-08T19:48:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: virgool\n"
@@ -96,6 +96,17 @@ msgstr ""
 #: admin/class-virgool-admin.php:317
 msgid "Published"
 msgstr ""
+
+#: admin/class-virgool-admin.php:342
+msgid "Cross post to the Virgool"
+msgstr ""
+
+#. translators: %s: number of posts crossed.
+#: admin/class-virgool-admin.php:399
+msgid "Crossed %s post to Virgool."
+msgid_plural "Crossed %s posts to Virgool."
+msgstr[0] ""
+msgstr[1] ""
 
 #: includes/class-virgool-api.php:68
 msgid "Login to the virgool api has been failed."
