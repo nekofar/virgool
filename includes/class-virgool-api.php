@@ -148,7 +148,7 @@ class Virgool_Api {
 	 */
 	public function create_user_post( $data = [], $status = 'draft' ) {
 
-		if ( in_array( $status, [ 'draft', 'publish' ], true ) ) {
+		if ( in_array( $status, [ 'draft', 'publish' ], true ) === false ) {
 			return new WP_Error( 'create_user_post_status', __( 'Wrong post status has been selected.', 'virgool' ) );
 		}
 
