@@ -2,7 +2,7 @@
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Virgool"
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
 
-    <description>A custom set of rules to check for a WPized WordPress project</description>
+    <description>Sniffs for WordPress plugins, with minor modifications for Virgool</description>
 
 	<!-- What to scan -->
 	<file>.</file>
@@ -19,6 +19,9 @@
 
     <!-- Only check the PHP files. JS files are checked separately with JSCS and JSHint. -->
     <arg name="extensions" value="php"/>
+
+    <!-- Exclude the test data and fixtures. -->
+    <exclude-pattern>/tests/*</exclude-pattern>
 
     <!-- Exclude the Composer Vendor directory. -->
     <exclude-pattern>/vendor/*</exclude-pattern>

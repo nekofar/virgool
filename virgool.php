@@ -45,11 +45,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-virgool.php';
  *
  * @since    1.0.0
  */
-function run_virgool() {
-
+function virgool_run() {
 	$plugin = new Virgool();
 	$plugin->run();
-
 }
 
-run_virgool();
+virgool_run();
