@@ -20,9 +20,6 @@
       "email": "milad@nekofar.com"
     }
   ],
-  "require": {
-    "ext-openssl": "*"
-  },
-  "scripts": {
-  }
+  "require": {},
+  "scripts": {}
 }

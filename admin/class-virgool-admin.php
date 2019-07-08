@@ -227,11 +227,7 @@ class Virgool_Admin {
 		$id    = isset( $args['id'] ) ? $args['id'] : '';
 		$label = isset( $args['label'] ) ? $args['label'] : '';
 
-		if ( ! extension_loaded( 'openssl' ) ) {
-			$value = isset( $options[ $id ] ) ? sanitize_text_field( $options[ $id ] ) : '';
-		} else {
-			$value = isset( $options[ $id ] ) ? openssl_decrypt( $options[ $id ], 'AES-256-CBC', AUTH_KEY ) : '';
-		}
+		$value = isset( $options[ $id ] ) ? sanitize_text_field( $options[ $id ] ) : '';
 
 		?>
 		<label for="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>">
@@ -293,23 +289,11 @@ class Virgool_Admin {
 	 */
 	public function callback_validate_options( $input ) {
 		if ( isset( $input['username'] ) ) {
-			$input['username'] = sanitize_text_field(
-				$input['username']
-			);
+			$input['username'] = sanitize_text_field( $input['username'] );
 		}
 
 		if ( isset( $input['password'] ) ) {
-			if ( ! extension_loaded( 'openssl' ) ) {
-				$input['password'] = sanitize_text_field(
-					$input['password']
-				);
-			} else {
-				$input['password'] = openssl_encrypt(
-					$input['password'],
-					'AES-256-CBC',
-					AUTH_KEY
-				);
-			}
+			$input['password'] = sanitize_text_field( $input['password'] );
 		}
 
 		$select_options = [
