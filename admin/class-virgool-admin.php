@@ -314,14 +314,79 @@ class Virgool_Admin {
 	}
 
 	/**
-	 * Cross posts to the Virgool on save posts
+	 * Cross posts to the Virgool on publish regular posts
 	 *
 	 * @param int     $post_ID Post ID.
 	 * @param WP_Post $post Post object.
 	 *
 	 * @since 1.0.0
 	 */
-	public function save_post( $post_ID, $post ) {
+	public function publish_post( $post_ID, $post ) {
 
+		// Check if virgool post info already exist.
+		$virgool_post = get_post_meta( $post_ID, 'virgool_post', true );
+		if ( empty( $virgool_post ) === false ) {
+			return;
+		}
+
+		// Send post to the virgool and receive created post info.
+		$virgool_post = $this->cross_post( $post );
+
+		// Save virgool post data associated with the post.
+		update_post_meta( $post_ID, 'virgool_post', $virgool_post );
+	}
+
+	/**
+	 * Create a post on Virgool
+	 *
+	 * @param WP_Post $post Post object.
+	 *
+	 * @return array|WP_Error
+	 *
+	 * @since 1.0.0
+	 */
+	private function cross_post( $post ) {
+
+		// Retrieve list of post tags.
+		$tags = wp_get_post_tags( $post->ID, [ 'fields' => 'names' ] );
+		$hash = $this->generate_hash( 12 );
+
+		$virgool_api = new Virgool_Api();
+
+		$virgool_post = $virgool_api->create_user_post(
+			[
+				'hash'           => $hash,
+				'title'          => $post->post_title,
+				'tag'            => $tags,
+				'body'           => $post->post_content,
+				'slug'           => $post->post_name . '-' . $hash,
+				'primary_img'    => '',
+				'post_id'        => '',
+				'og_description' => null,
+			],
+			'draft'
+		);
+
+		return $virgool_post;
+	}
+
+	/**
+	 * Generate random string to use as virgool post hash.
+	 *
+	 * @param int $length the length of generated sting.
+	 *
+	 * @return string
+	 *
+	 * @since 1.0.0
+	 */
+	private function generate_hash( $length = 10 ) {
+		$characters        = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$characters_length = strlen( $characters );
+		$random_string     = '';
+		for ( $i = 0; $i < $length; $i ++ ) {
+			$random_string .= $characters[ wp_rand( 0, $characters_length - 1 ) ];
+		}
+
+		return $random_string;
 	}
 }
