@@ -9,13 +9,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-07-06T23:26:40+00:00\n"
+"POT-Creation-Date: 2019-07-08T12:27:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: virgool\n"
 
 #. Plugin Name of the plugin
-#: admin/class-virgool-admin.php:66
+#: admin/class-virgool-admin.php:64
 msgid "Virgool"
 msgstr ""
 
@@ -35,77 +35,77 @@ msgstr ""
 msgid "https://milad.nekofar.com/"
 msgstr ""
 
-#: admin/class-virgool-admin.php:67
+#: admin/class-virgool-admin.php:63
 msgid "Virgool Settings"
 msgstr ""
 
-#: admin/class-virgool-admin.php:102
+#: admin/class-virgool-admin.php:95
 msgid "Login Information"
 msgstr ""
 
-#: admin/class-virgool-admin.php:109
+#: admin/class-virgool-admin.php:102
 msgid "Publish Settings"
 msgstr ""
 
-#: admin/class-virgool-admin.php:116
+#: admin/class-virgool-admin.php:109
 msgid "Username"
 msgstr ""
 
-#: admin/class-virgool-admin.php:122
+#: admin/class-virgool-admin.php:115
 msgid "The username you use to enter the Virgool."
 msgstr ""
 
-#: admin/class-virgool-admin.php:128
+#: admin/class-virgool-admin.php:121
 msgid "Password"
 msgstr ""
 
-#: admin/class-virgool-admin.php:134
+#: admin/class-virgool-admin.php:127
 msgid "The password you use to enter the Virgool."
 msgstr ""
 
-#: admin/class-virgool-admin.php:140
+#: admin/class-virgool-admin.php:133
 msgid "Status"
 msgstr ""
 
-#: admin/class-virgool-admin.php:146
+#: admin/class-virgool-admin.php:139
 msgid "Default status of the publication of the contents sent to the comma."
 msgstr ""
 
-#: admin/class-virgool-admin.php:158
+#: admin/class-virgool-admin.php:150
 msgid "This plugin uses your login information to communicate with the Virgool. Please enter your login information as requested."
 msgstr ""
 
-#: admin/class-virgool-admin.php:167
+#: admin/class-virgool-admin.php:159
 msgid "Using this section, you can choose the options for publishing the content in the Virgool."
 msgstr ""
 
-#: admin/class-virgool-admin.php:248
-#: admin/class-virgool-admin.php:301
+#: admin/class-virgool-admin.php:236
+#: admin/class-virgool-admin.php:288
 msgid "Draft"
 msgstr ""
 
-#: admin/class-virgool-admin.php:249
-#: admin/class-virgool-admin.php:302
+#: admin/class-virgool-admin.php:237
+#: admin/class-virgool-admin.php:289
 msgid "Published"
 msgstr ""
 
-#: includes/class-virgool-api.php:69
+#: includes/class-virgool-api.php:68
 msgid "Login to the virgool api has been failed."
 msgstr ""
 
-#: includes/class-virgool-api.php:99
+#: includes/class-virgool-api.php:97
 msgid "Retrieve user info has been failed."
 msgstr ""
 
-#: includes/class-virgool-api.php:117
-#: includes/class-virgool-api.php:152
+#: includes/class-virgool-api.php:113
+#: includes/class-virgool-api.php:146
 msgid "Wrong post status has been selected."
 msgstr ""
 
-#: includes/class-virgool-api.php:133
+#: includes/class-virgool-api.php:129
 msgid "Retrieve user posts has been failed."
 msgstr ""
 
-#: includes/class-virgool-api.php:177
+#: includes/class-virgool-api.php:171
 msgid "Create user post has been failed."
 msgstr ""
