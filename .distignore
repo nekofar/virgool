@@ -46,6 +46,7 @@ phpunit.xml.dist
 README.md
 tests
 Thumbs.db
+tmp
 vendor
 webpack.config.js
 wp-cli.local.yml
