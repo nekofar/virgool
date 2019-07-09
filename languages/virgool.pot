@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-07-09T16:59:16+00:00\n"
+"POT-Creation-Date: 2019-07-09T20:02:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: virgool\n"
@@ -102,14 +102,14 @@ msgid "Cross post to the Virgool"
 msgstr ""
 
 #. translators: %s: number of success.
-#: admin/class-virgool-admin.php:403
+#: admin/class-virgool-admin.php:401
 msgid "%s post crossed to the virgool successfully."
 msgid_plural "%s posts crossed to the virgool successfully"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: number of failure.
-#: admin/class-virgool-admin.php:408
+#: admin/class-virgool-admin.php:407
 msgid "Failed to cross %s post crossed to the virgool."
 msgid_plural "Failed to cross %s posts crossed to the virgool."
 msgstr[0] ""

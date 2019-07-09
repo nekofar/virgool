@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virgool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
-"POT-Creation-Date: 2019-07-09T16:53:16+00:00\n"
+"POT-Creation-Date: 2019-07-09T20:02:23+00:00\n"
 "PO-Revision-Date: 2019-07-04 15:05+0430\n"
 "Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
 "Language-Team: \n"
@@ -111,13 +111,13 @@ msgid "Cross post to the Virgool"
 msgstr "ارسال متقابل به ویرگول"
 
 #. translators: %s: number of success.
-#: admin/class-virgool-admin.php:403
+#: admin/class-virgool-admin.php:401
 msgid "%s post crossed to the virgool successfully."
 msgid_plural "%s posts crossed to the virgool successfully"
 msgstr[0] "%s نوشته با موفقیت به ویرگول ارسال شد."
 
 #. translators: %s: number of failure.
-#: admin/class-virgool-admin.php:408
+#: admin/class-virgool-admin.php:407
 msgid "Failed to cross %s post crossed to the virgool."
 msgid_plural "Failed to cross %s posts crossed to the virgool."
 msgstr[0] "ارسال %s نوشته به ویرگول شکست خورد."
