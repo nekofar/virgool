@@ -422,6 +422,16 @@ class Virgool_Admin {
 	 */
 	public function publish_post( $post_id, $post ) {
 
+		// Make sure this is not an import.
+		if ( array_key_exists( 'importer', $GLOBALS ) === true ) {
+			return;
+		}
+
+		// Make sure this is not a revision.
+		if ( wp_is_post_revision( $post_id ) ) {
+			return;
+		}
+
 		// Check if virgool post info already exist.
 		$virgool_post = get_post_meta( $post_id, 'virgool_post', true );
 		if ( empty( $virgool_post ) === false ) {
