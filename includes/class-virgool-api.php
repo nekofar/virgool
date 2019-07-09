@@ -148,12 +148,13 @@ class Virgool_Api {
 
 		$data = [
 			'hash'           => $data['hash'],
+			'slug'           => $data['slug'],
 			'title'          => $data['title'],
-			'tag'            => $data['tag'],
 			'body'           => $data['body'],
+			'og_description' => $data['og_description'],
+			'tag'            => $data['tag'],
 			'primary_img'    => $data['primary_img'],
-			'post_id'        => '',
-			'og_description' => null,
+			'post_id'        => null,
 		];
 
 		$response = wp_remote_post(

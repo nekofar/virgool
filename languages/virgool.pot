@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-07-08T19:48:20+00:00\n"
+"POT-Creation-Date: 2019-07-09T16:59:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: virgool\n"
@@ -87,24 +87,31 @@ msgstr ""
 msgid "Using this section, you can choose the options for publishing the content in the Virgool."
 msgstr ""
 
-#: admin/class-virgool-admin.php:264
-#: admin/class-virgool-admin.php:316
+#: admin/class-virgool-admin.php:260
+#: admin/class-virgool-admin.php:300
 msgid "Draft"
 msgstr ""
 
-#: admin/class-virgool-admin.php:265
-#: admin/class-virgool-admin.php:317
+#: admin/class-virgool-admin.php:261
+#: admin/class-virgool-admin.php:301
 msgid "Published"
 msgstr ""
 
-#: admin/class-virgool-admin.php:342
+#: admin/class-virgool-admin.php:326
 msgid "Cross post to the Virgool"
 msgstr ""
 
-#. translators: %s: number of posts crossed.
-#: admin/class-virgool-admin.php:399
-msgid "Crossed %s post to Virgool."
-msgid_plural "Crossed %s posts to Virgool."
+#. translators: %s: number of success.
+#: admin/class-virgool-admin.php:403
+msgid "%s post crossed to the virgool successfully."
+msgid_plural "%s posts crossed to the virgool successfully"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of failure.
+#: admin/class-virgool-admin.php:408
+msgid "Failed to cross %s post crossed to the virgool."
+msgid_plural "Failed to cross %s posts crossed to the virgool."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -125,6 +132,11 @@ msgstr ""
 msgid "Retrieve user posts has been failed."
 msgstr ""
 
-#: includes/class-virgool-api.php:171
+#: includes/class-virgool-api.php:172
 msgid "Create user post has been failed."
+msgstr ""
+
+#: includes/class-virgool-api.php:229
+#: includes/class-virgool-api.php:234
+msgid "Upload primary image has been failed."
 msgstr ""

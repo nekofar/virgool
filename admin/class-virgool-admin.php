@@ -344,17 +344,33 @@ class Virgool_Admin {
 			return $redirect_to;
 		}
 
+		$success = 0;
+		$failure = 0;
+
 		foreach ( $post_ids as $post_id ) {
 			$post = get_post( $post_id );
 
+			// Check if virgool post info already exist.
+			$virgool_post = get_post_meta( $post_id, 'virgool_post', true );
+			if ( empty( $virgool_post ) === false ) {
+				$failure ++;
+				continue;
+			}
+
 			// Send post to the virgool and receive created post info.
 			$virgool_post = $this->cross_post( $post );
+			if ( $virgool_post instanceof WP_Error ) {
+				$failure ++;
+				continue;
+			} else {
+				$success ++;
+			}
 
 			// Save virgool post data associated with the post.
 			update_post_meta( $post_id, 'virgool_post', $virgool_post );
 		}
 
-		$redirect_to = add_query_arg( 'bulk_cross_posts', count( $post_ids ), $redirect_to );
+		$redirect_to = add_query_arg( 'bulk_cross_posts', compact( 'success', 'failure' ), $redirect_to );
 
 		// Create an nonce, and add it as a query var in a link to perform an action.
 		$redirect_to = add_query_arg( '_wpnonce', wp_create_nonce( 'bulk_cross_posts' ), $redirect_to );
@@ -366,39 +382,48 @@ class Virgool_Admin {
 	 * Print bulk actions notices.
 	 */
 	public function bulk_action_admin_notices() {
-		if ( ! isset( $_GET['_wpnonce'] ) ) {
+		if ( ! isset( $_REQUEST['_wpnonce'] ) ) {
 			return;
 		}
 
-		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'bulk_cross_posts' ) ) {
+		if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ), 'bulk_cross_posts' ) ) {
 			return;
 		}
 
-		if ( empty( $_GET['bulk_cross_posts'] ) === false ) {
-			$crossed_count = intval( $_GET['bulk_cross_posts'] );
-			printf(
-				sprintf(
-					'<div id="message" class="updated fade">%s</div>',
-					/* translators: %s: number of posts crossed. */
-					esc_html( _n( 'Crossed %s post to Virgool.', 'Crossed %s posts to Virgool.', esc_html( $crossed_count ), 'virgool' ) )
-				),
-				esc_html( $crossed_count )
-			);
+		if ( empty( $_REQUEST['bulk_cross_posts'] ) === false ) {
+			$success = isset( $_REQUEST['bulk_cross_posts']['success'] ) ?
+				intval( $_REQUEST['bulk_cross_posts']['success'] ) : 0;
+			$failure = isset( $_REQUEST['bulk_cross_posts']['failure'] ) ?
+				intval( $_REQUEST['bulk_cross_posts']['failure'] ) : 0;
+
+			$message = '';
+
+			if ( 0 < $success ) {
+				/* translators: %s: number of success. */
+				$message .= sprintf( _n( '%s post crossed to the virgool successfully.', '%s posts crossed to the virgool successfully', $success, 'virgool' ), $success );
+			}
+
+			if ( 0 < $failure ) {
+				/* translators: %s: number of failure. */
+				$message .= sprintf( _n( 'Failed to cross %s post crossed to the virgool.', 'Failed to cross %s posts crossed to the virgool.', $failure, 'virgool' ), $failure );
+			}
+
+			printf( '<div id="message" class="updated fade">%s</div>', esc_html( $message ) );
 		}
 	}
 
 	/**
 	 * Cross posts to the Virgool on publish regular posts
 	 *
-	 * @param int     $post_ID Post ID.
+	 * @param int     $post_id Post ID.
 	 * @param WP_Post $post Post object.
 	 *
 	 * @since 1.0.0
 	 */
-	public function publish_post( $post_ID, $post ) {
+	public function publish_post( $post_id, $post ) {
 
 		// Check if virgool post info already exist.
-		$virgool_post = get_post_meta( $post_ID, 'virgool_post', true );
+		$virgool_post = get_post_meta( $post_id, 'virgool_post', true );
 		if ( empty( $virgool_post ) === false ) {
 			return;
 		}
@@ -407,7 +432,7 @@ class Virgool_Admin {
 		$virgool_post = $this->cross_post( $post );
 
 		// Save virgool post data associated with the post.
-		update_post_meta( $post_ID, 'virgool_post', $virgool_post );
+		update_post_meta( $post_id, 'virgool_post', $virgool_post );
 	}
 
 	/**
@@ -423,44 +448,35 @@ class Virgool_Admin {
 
 		// Retrieve list of post tags.
 		$tags = wp_get_post_tags( $post->ID, [ 'fields' => 'names' ] );
-		$hash = $this->generate_hash( 12 );
+
+		// Generate a random string as Virgool post hash.
+		$hash = strtolower( wp_generate_password( 12, false ) );
 
 		$virgool_api = new Virgool_Api();
+
+		$options = get_option( $this->plugin_name . '_options' );
+
+		// Try to login to Virgool or return error.
+		$login = $virgool_api->login( $options['username'], $options['password'] );
+		if ( $login instanceof WP_Error ) {
+			return $login;
+		}
 
 		$virgool_post = $virgool_api->create_user_post(
 			[
 				'hash'           => $hash,
-				'title'          => $post->post_title,
-				'tag'            => $tags,
-				'body'           => $post->post_content,
 				'slug'           => $post->post_name . '-' . $hash,
-				'primary_img'    => '',
-				'post_id'        => '',
-				'og_description' => null,
+				'title'          => $post->post_title,
+				'body'           => $post->post_content,
+				'og_description' => wp_html_excerpt( $post->post_excerpt, 140 ),
+				'tag'            => $tags,
+				'primary_img'    => null,
+				'post_id'        => null,
 			],
-			'draft'
+			$options['status']
 		);
 
 		return $virgool_post;
 	}
 
-	/**
-	 * Generate random string to use as virgool post hash.
-	 *
-	 * @param int $length the length of generated sting.
-	 *
-	 * @return string
-	 *
-	 * @since 1.0.0
-	 */
-	private function generate_hash( $length = 10 ) {
-		$characters        = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-		$characters_length = strlen( $characters );
-		$random_string     = '';
-		for ( $i = 0; $i < $length; $i ++ ) {
-			$random_string .= $characters[ wp_rand( 0, $characters_length - 1 ) ];
-		}
-
-		return $random_string;
-	}
 }

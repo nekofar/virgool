@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virgool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
-"POT-Creation-Date: 2019-07-08T19:42:25+00:00\n"
+"POT-Creation-Date: 2019-07-09T16:53:16+00:00\n"
 "PO-Revision-Date: 2019-07-04 15:05+0430\n"
 "Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
 "X-Domain: virgool\n"
-"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Plugin Name of the plugin
 #: admin/class-virgool-admin.php:92
@@ -98,24 +98,29 @@ msgstr ""
 "با استفاده از این بخش، می توانید گزینه هایی را برای انتشار محتوا در ویرگول "
 "انتخاب کنید."
 
-#: admin/class-virgool-admin.php:264 admin/class-virgool-admin.php:316
+#: admin/class-virgool-admin.php:260 admin/class-virgool-admin.php:300
 msgid "Draft"
 msgstr "پیش نویس"
 
-#: admin/class-virgool-admin.php:265 admin/class-virgool-admin.php:317
+#: admin/class-virgool-admin.php:261 admin/class-virgool-admin.php:301
 msgid "Published"
 msgstr "منتشر شده"
 
-#: admin/class-virgool-admin.php:342
+#: admin/class-virgool-admin.php:326
 msgid "Cross post to the Virgool"
 msgstr "ارسال متقابل به ویرگول"
 
-#. translators: %s: number of posts crossed.
-#: admin/class-virgool-admin.php:399
-msgid "Crossed %s post to Virgool."
-msgid_plural "Crossed %s posts to Virgool."
-msgstr[0] "%s نوشته متقابلا به ویرگول ارسال شد."
-msgstr[1] "%s نوشته متقابلا به ویرگول ارسال شد."
+#. translators: %s: number of success.
+#: admin/class-virgool-admin.php:403
+msgid "%s post crossed to the virgool successfully."
+msgid_plural "%s posts crossed to the virgool successfully"
+msgstr[0] "%s نوشته با موفقیت به ویرگول ارسال شد."
+
+#. translators: %s: number of failure.
+#: admin/class-virgool-admin.php:408
+msgid "Failed to cross %s post crossed to the virgool."
+msgid_plural "Failed to cross %s posts crossed to the virgool."
+msgstr[0] "ارسال %s نوشته به ویرگول شکست خورد."
 
 #: includes/class-virgool-api.php:68
 msgid "Login to the virgool api has been failed."
@@ -133,6 +138,14 @@ msgstr "وضعیت پست انتخاب شده صحیح نیست."
 msgid "Retrieve user posts has been failed."
 msgstr "دریافت ارسال های کاربر ناموفق بود."
 
-#: includes/class-virgool-api.php:171
+#: includes/class-virgool-api.php:172
 msgid "Create user post has been failed."
 msgstr "ایجاد پست جدید برای کاربر ناموفق بود."
+
+#: includes/class-virgool-api.php:229 includes/class-virgool-api.php:234
+msgid "Upload primary image has been failed."
+msgstr "بارگذاری تصویر اصلی شکست خورد."
+
+#~ msgid "Crossed %s post to Virgool."
+#~ msgid_plural "Crossed %s posts to Virgool."
+#~ msgstr[0] "%s نوشته متقابلا به ویرگول ارسال شد."
