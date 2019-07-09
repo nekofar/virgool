@@ -396,19 +396,17 @@ class Virgool_Admin {
 			$failure = isset( $_REQUEST['bulk_cross_posts']['failure'] ) ?
 				intval( $_REQUEST['bulk_cross_posts']['failure'] ) : 0;
 
-			$message = '';
-
 			if ( 0 < $success ) {
 				/* translators: %s: number of success. */
-				$message .= sprintf( _n( '%s post crossed to the virgool successfully.', '%s posts crossed to the virgool successfully', $success, 'virgool' ), $success );
+				$message = sprintf( _n( '%s post crossed to the virgool successfully.', '%s posts crossed to the virgool successfully', $success, 'virgool' ), $success );
+				printf( '<div class="notice notice-success is-dismissible"><p>%s</p></div>', esc_html( $message ) );
 			}
 
 			if ( 0 < $failure ) {
 				/* translators: %s: number of failure. */
-				$message .= sprintf( _n( 'Failed to cross %s post crossed to the virgool.', 'Failed to cross %s posts crossed to the virgool.', $failure, 'virgool' ), $failure );
+				$message = sprintf( _n( 'Failed to cross %s post crossed to the virgool.', 'Failed to cross %s posts crossed to the virgool.', $failure, 'virgool' ), $failure );
+				printf( '<div class="notice notice-error is-dismissible"><p>%s</p></div>', esc_html( $message ) );
 			}
-
-			printf( '<div id="message" class="updated fade">%s</div>', esc_html( $message ) );
 		}
 	}
 
