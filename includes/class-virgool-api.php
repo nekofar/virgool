@@ -37,15 +37,15 @@ class Virgool_Api {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string
+	 * @var      string[]
 	 */
 	private $headers;
 
 	/**
 	 * Login using username and passwords and put token to the headers for future requests
 	 *
-	 * @param    string $username username of virgool account.
-	 * @param    string $password password of virgool account.
+	 * @param string $username username of virgool account.
+	 * @param string $password password of virgool account.
 	 *
 	 * @return   WP_Error|bool
 	 * @since    1.0.0
@@ -172,6 +172,68 @@ class Virgool_Api {
 		}
 
 		return $data['data'];
+	}
+
+	/**
+	 * Upload given file path to the virgool.
+	 *
+	 * @param string $file_path Path to the file for upload.
+	 *
+	 * @param string $folder_name Post hash as folder name.
+	 *
+	 * @return null|string
+	 */
+	public function upload_primary_image( $file_path, $folder_name ) {
+		WP_Filesystem();
+		global $wp_filesystem;
+
+		// path to a local file on your server.
+		if ( file_exists( $file_path ) === false ) {
+			$file_path = VIRGOOL_PLUGIN_DIR . 'tmp/upload.jpg';
+		}
+
+		$boundary = sprintf( '--%s', wp_generate_password( 10, false ) );
+
+		$this->headers['Content-Type'] = 'multipart/form-data; boundary=' . $boundary;
+
+		$data = '';
+
+		// First, add the standard POST fields.
+		$data .= '--' . $boundary;
+		$data .= "\r\n";
+		$data .= 'Content-Disposition: form-data; name="foldername"' . "\r\n\r\n";
+		$data .= $folder_name;
+		$data .= "\r\n";
+
+		// Upload the file.
+		$data .= '--' . $boundary . "\r\n";
+		$data .= 'Content-Disposition: form-data; name="upload"; filename="' . basename( $file_path ) . "\r\n";
+		$data .= 'Content-Type: image/jpeg' . "\r\n";
+		$data .= "\r\n";
+		$data .= $wp_filesystem->get_contents( $file_path );
+		$data .= "\r\n";
+
+		$data .= '--' . $boundary . '--';
+
+		$response = wp_remote_post(
+			$this->base_url . '/post/upload/',
+			[
+				'body'    => $data,
+				'headers' => $this->headers,
+			]
+		);
+
+		$body = wp_remote_retrieve_body( $response );
+		if ( empty( $body ) === true ) {
+			return new WP_Error( 'upload_primary_image', __( 'Upload primary image has been failed.', 'virgool' ) );
+		}
+
+		$data = json_decode( $body, true );
+		if ( isset( $data['success'] ) && false === $data['success'] ) {
+			return new WP_Error( 'upload_primary_image', __( 'Upload primary image has been failed.', 'virgool' ) );
+		}
+
+		return $data;
 	}
 
 }
