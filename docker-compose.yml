@@ -29,8 +29,11 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DEBUG: 1
       WORDPRESS_CONFIG_EXTRA: |
+        /* Enable non minified asset files */
         define( 'SCRIPT_DEBUG', true );
-        /* Set default language */
+        /* Make WordPress install plugins directly */
+        define( 'FS_METHOD', 'direct' );
+        /* Set default language to Persian */
         define( 'WPLANG', 'fa_IR' );
 
   wordpress-cli:
