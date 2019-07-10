@@ -193,3 +193,4 @@ composer.phar
 # composer.lock
 
 /tmp/
+/.directory

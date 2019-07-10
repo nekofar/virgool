@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virgool 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/virgool\n"
-"POT-Creation-Date: 2019-07-09T20:02:23+00:00\n"
+"POT-Creation-Date: 2019-07-10T07:59:36+00:00\n"
 "PO-Revision-Date: 2019-07-04 15:05+0430\n"
 "Last-Translator: Milad Nekofar <milad@nekofar.com>\n"
 "Language-Team: \n"
@@ -79,7 +79,7 @@ msgid "Status"
 msgstr "وضعیت"
 
 #: admin/class-virgool-admin.php:167
-msgid "Default status of the publication of the contents sent to the comma."
+msgid "Default status of the publication of the contents sent to the virgool."
 msgstr "وضعیت پیش فرض انتشار مطالب ارسال شده به ویرگول."
 
 #: admin/class-virgool-admin.php:178
@@ -145,6 +145,9 @@ msgstr "ایجاد پست جدید برای کاربر ناموفق بود."
 #: includes/class-virgool-api.php:229 includes/class-virgool-api.php:234
 msgid "Upload primary image has been failed."
 msgstr "بارگذاری تصویر اصلی شکست خورد."
+
+#~ msgid "Default status of the publication of the contents sent to the comma."
+#~ msgstr "وضعیت پیش فرض انتشار مطالب ارسال شده به ویرگول."
 
 #~ msgid "Crossed %s post to Virgool."
 #~ msgid_plural "Crossed %s posts to Virgool."
