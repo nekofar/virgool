@@ -164,7 +164,7 @@ class Virgool_Admin {
 			$this->plugin_name . '_section_publish',
 			[
 				'id'    => 'status',
-				'label' => __( 'Default status of the publication of the contents sent to the comma.', 'virgool' ),
+				'label' => __( 'Default status of the publication of the contents sent to the virgool.', 'virgool' ),
 			]
 		);
 	}
