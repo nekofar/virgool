@@ -12,10 +12,6 @@ branches:
   only:
     - master
 
-cache:
-  directories:
-    - $HOME/.composer/cache
-
 matrix:
   include:
     - php: 7.3
@@ -25,21 +21,14 @@ matrix:
     - php: 5.6
 
 before_script:
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - |
     if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
       phpenv config-rm xdebug.ini
     else
       echo "xdebug.ini does not exist"
     fi
-  - |
-    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
-      composer global require wp-coding-standards/wpcs
-      phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
-    fi
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
 
 script:
-  - |
-    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
-      phpcs
-    fi
+  - vendor/bin/phpcs
