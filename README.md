@@ -11,6 +11,13 @@ License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 <only:wp -->
 
+<!-- only:github/ -->
+[![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/virgool.svg)](https://wordpress.org/plugins/virgool)
+![WordPress Plugin: Required WP Version](https://img.shields.io/wordpress/plugin/wp-version/virgool.svg)
+![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/virgool.svg)
+![GitHub](https://img.shields.io/github/license/nekofar/virgool.svg)
+<!-- /only:github -->
+
 Publish posts automatically to a Virgool profile.
 
 ## Description
