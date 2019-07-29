@@ -13,9 +13,7 @@ services:
   wordpress:
     depends_on:
       - mariadb
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    image: nekofar/wordpress:latest
     ports:
       - 8000:80
     volumes:
