@@ -2,7 +2,7 @@
   "name": "nekofar/virgool",
   "description": "Virgool lets you publish posts automatically to a Virgool profile.",
   "require-dev": {
-    "codeception/codeception": "3.0.2",
+    "codeception/codeception": "3.0.3",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
     "friendsofphp/php-cs-fixer": "^2.15",
     "lucatume/wp-browser": "^2.2",
