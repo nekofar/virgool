@@ -69,10 +69,10 @@ class Virgool_Admin {
 
 		if ( $plugin === $plugin_file ) {
 			$actions = array_merge(
-				[
+				array(
 					'settings' => '<a href="options-general.php?page=virgool">' . __( 'Settings', 'virgool' ) . '</a>',
 					'support'  => '<a href="http://github.com/nekofar/virgool/issues" target="_blank">' . __( 'Support', 'virgool' ) . '</a>',
-				],
+				),
 				$actions
 			);
 		}
@@ -92,7 +92,7 @@ class Virgool_Admin {
 			__( 'Virgool', 'virgool' ),
 			'manage_options',
 			'virgool',
-			[ $this, 'add_settings_page' ]
+			array( $this, 'add_settings_page' )
 		);
 	}
 
@@ -115,57 +115,57 @@ class Virgool_Admin {
 		register_setting(
 			$this->plugin_name . '_options',
 			$this->plugin_name . '_options',
-			[ $this, 'callback_validate_options' ]
+			array( $this, 'callback_validate_options' )
 		);
 
 		add_settings_section(
 			$this->plugin_name . '_section_login',
 			__( 'Login Information', 'virgool' ),
-			[ $this, 'callback_section_login' ],
+			array( $this, 'callback_section_login' ),
 			'virgool'
 		);
 
 		add_settings_section(
 			$this->plugin_name . '_section_publish',
 			__( 'Publish Settings', 'virgool' ),
-			[ $this, 'callback_section_publish' ],
+			array( $this, 'callback_section_publish' ),
 			'virgool'
 		);
 
 		add_settings_field(
 			'username',
 			__( 'Username', 'virgool' ),
-			[ $this, 'callback_field_text' ],
+			array( $this, 'callback_field_text' ),
 			$this->plugin_name,
 			$this->plugin_name . '_section_login',
-			[
+			array(
 				'id'    => 'username',
 				'label' => __( 'The username you use to enter the Virgool.', 'virgool' ),
-			]
+			)
 		);
 
 		add_settings_field(
 			'password',
 			__( 'Password', 'virgool' ),
-			[ $this, 'callback_field_password' ],
+			array( $this, 'callback_field_password' ),
 			$this->plugin_name,
 			$this->plugin_name . '_section_login',
-			[
+			array(
 				'id'    => 'password',
 				'label' => __( 'The password you use to enter the Virgool.', 'virgool' ),
-			]
+			)
 		);
 
 		add_settings_field(
 			'status',
 			__( 'Status', 'virgool' ),
-			[ $this, 'callback_field_select' ],
+			array( $this, 'callback_field_select' ),
 			$this->plugin_name,
 			$this->plugin_name . '_section_publish',
-			[
+			array(
 				'id'    => 'status',
 				'label' => __( 'Default status of the publication of the contents sent to the virgool.', 'virgool' ),
-			]
+			)
 		);
 	}
 
@@ -256,10 +256,10 @@ class Virgool_Admin {
 
 		$selected_option = isset( $options[ $id ] ) ? sanitize_text_field( $options[ $id ] ) : '';
 
-		$select_options = [
+		$select_options = array(
 			'draft'     => __( 'Draft', 'virgool' ),
 			'published' => __( 'Published', 'virgool' ),
-		];
+		);
 		?>
 		<label for="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>">
 			<select id="<?php echo esc_html( $this->plugin_name . '_options_' . $id ); ?>"
@@ -296,10 +296,10 @@ class Virgool_Admin {
 			$input['password'] = sanitize_text_field( $input['password'] );
 		}
 
-		$select_options = [
+		$select_options = array(
 			'draft'     => __( 'Draft', 'virgool' ),
 			'published' => __( 'Published', 'virgool' ),
-		];
+		);
 
 		if ( ! isset( $input['status'] ) ) {
 			$input['status'] = null;
@@ -322,9 +322,9 @@ class Virgool_Admin {
 	public function add_bulk_actions( $actions ) {
 		$actions = array_merge(
 			$actions,
-			[
+			array(
 				'cross_post_virgool' => __( 'Cross post to the Virgool', 'virgool' ),
-			]
+			)
 		);
 
 		return $actions;
@@ -340,7 +340,7 @@ class Virgool_Admin {
 	 * @return mixed
 	 */
 	public function handle_bulk_actions( $redirect_to, $doaction, $post_ids ) {
-		if ( in_array( $doaction, [ 'cross_post_virgool' ], true ) === false ) {
+		if ( in_array( $doaction, array( 'cross_post_virgool' ), true ) === false ) {
 			return $redirect_to;
 		}
 
@@ -376,6 +376,50 @@ class Virgool_Admin {
 		$redirect_to = add_query_arg( '_wpnonce', wp_create_nonce( 'bulk_cross_posts' ), $redirect_to );
 
 		return $redirect_to;
+	}
+
+	/**
+	 * Create a post on Virgool
+	 *
+	 * @param WP_Post $post Post object.
+	 *
+	 * @return array|WP_Error
+	 *
+	 * @since 1.0.0
+	 */
+	private function cross_post( $post ) {
+
+		// Retrieve list of post tags.
+		$tags = wp_get_post_tags( $post->ID, array( 'fields' => 'names' ) );
+
+		// Generate a random string as Virgool post hash.
+		$hash = strtolower( wp_generate_password( 12, false ) );
+
+		$virgool_api = new Virgool_Api();
+
+		$options = get_option( $this->plugin_name . '_options' );
+
+		// Try to login to Virgool or return error.
+		$login = $virgool_api->login( $options['username'], $options['password'] );
+		if ( $login instanceof WP_Error ) {
+			return $login;
+		}
+
+		$virgool_post = $virgool_api->create_user_post(
+			array(
+				'hash'           => $hash,
+				'slug'           => $post->post_name . '-' . $hash,
+				'title'          => $post->post_title,
+				'body'           => $post->post_content,
+				'og_description' => wp_html_excerpt( $post->post_excerpt, 140 ),
+				'tag'            => $tags,
+				'primary_img'    => null,
+				'post_id'        => null,
+			),
+			$options['status']
+		);
+
+		return $virgool_post;
 	}
 
 	/**
@@ -441,50 +485,6 @@ class Virgool_Admin {
 
 		// Save virgool post data associated with the post.
 		update_post_meta( $post_id, 'virgool_post', $virgool_post );
-	}
-
-	/**
-	 * Create a post on Virgool
-	 *
-	 * @param WP_Post $post Post object.
-	 *
-	 * @return array|WP_Error
-	 *
-	 * @since 1.0.0
-	 */
-	private function cross_post( $post ) {
-
-		// Retrieve list of post tags.
-		$tags = wp_get_post_tags( $post->ID, [ 'fields' => 'names' ] );
-
-		// Generate a random string as Virgool post hash.
-		$hash = strtolower( wp_generate_password( 12, false ) );
-
-		$virgool_api = new Virgool_Api();
-
-		$options = get_option( $this->plugin_name . '_options' );
-
-		// Try to login to Virgool or return error.
-		$login = $virgool_api->login( $options['username'], $options['password'] );
-		if ( $login instanceof WP_Error ) {
-			return $login;
-		}
-
-		$virgool_post = $virgool_api->create_user_post(
-			[
-				'hash'           => $hash,
-				'slug'           => $post->post_name . '-' . $hash,
-				'title'          => $post->post_title,
-				'body'           => $post->post_content,
-				'og_description' => wp_html_excerpt( $post->post_excerpt, 140 ),
-				'tag'            => $tags,
-				'primary_img'    => null,
-				'post_id'        => null,
-			],
-			$options['status']
-		);
-
-		return $virgool_post;
 	}
 
 }
