@@ -1,7 +1,24 @@
 {
   "name": "nekofar/virgool",
   "description": "Virgool lets you publish posts automatically to a Virgool profile.",
+  "homepage": "https://github.com/nekofar/virgool",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Milad Nekofar",
+      "email": "milad@nekofar.com"
+    }
+  ],
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.6|>=7.0",
+    "ext-json": "*",
+    "composer/installers": "~1.0"
+  },
   "require-dev": {
+    "wordpress/wordpress": "5.3",
     "codeception/codeception": "3.1.2",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
     "friendsofphp/php-cs-fixer": "^2.15",
@@ -13,13 +30,25 @@
     "wp-cli/wp-cli": "^2.2",
     "wp-coding-standards/wpcs": "^2.1"
   },
-  "license": "GPL-2.0+",
-  "authors": [
+  "repositories": [
     {
-      "name": "Milad Nekofar",
-      "email": "milad@nekofar.com"
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress/wordpress",
+        "type": "wordpress-core",
+        "version": "5.3",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/WordPress/WordPress/archive/5.3.zip"
+        }
+      }
     }
   ],
-  "require": {},
-  "scripts": {}
+  "scripts": {
+    "lint": "./vendor/bin/phpcs"
+  }
 }
