@@ -4730,16 +4730,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.3",
+            "version": "3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb"
+                "reference": "dceec07328401de6211037abbb18bda423677e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dceec07328401de6211037abbb18bda423677e26",
+                "reference": "dceec07328401de6211037abbb18bda423677e26",
                 "shasum": ""
             },
             "require": {
@@ -4777,7 +4777,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-12-04T04:46:47+00:00"
+            "time": "2020-01-30T22:20:29+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -8001,12 +8001,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "bc37f66e25b9992813b0c50b933aefbf88718e6a"
+                "reference": "5dc1c5835dcf532dd8530b83c32a2e249211df94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/bc37f66e25b9992813b0c50b933aefbf88718e6a",
-                "reference": "bc37f66e25b9992813b0c50b933aefbf88718e6a",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/5dc1c5835dcf532dd8530b83c32a2e249211df94",
+                "reference": "5dc1c5835dcf532dd8530b83c32a2e249211df94",
                 "shasum": ""
             },
             "require": {
@@ -8055,7 +8055,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2019-12-13T09:09:35+00:00"
+            "time": "2020-02-05T09:25:25+00:00"
         },
         {
             "name": "wp-cli/wp-cli-bundle",
