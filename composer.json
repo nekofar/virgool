@@ -19,7 +19,7 @@
   },
   "require-dev": {
     "wordpress/wordpress": "5.3",
-    "codeception/codeception": "3.1.2",
+    "codeception/codeception": "4.1.6",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.6.0",
     "friendsofphp/php-cs-fixer": "^2.15",
     "lucatume/wp-browser": "^2.2",
