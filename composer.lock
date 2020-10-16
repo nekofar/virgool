@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23603c32e89beac66d9c5e26986fa6ae",
+    "content-hash": "903b84173f12a889e63bc5bf2129332e",
     "packages": [
         {
             "name": "composer/installers",
@@ -6508,16 +6508,16 @@
         },
         {
             "name": "wp-cli/dist-archive-command",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/dist-archive-command.git",
-                "reference": "f40b5dd553b4547215dd07dc3acdfda78b5576e8"
+                "reference": "ede13cd4b8084f7861290ac4fcdda7f9866efe09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/dist-archive-command/zipball/f40b5dd553b4547215dd07dc3acdfda78b5576e8",
-                "reference": "f40b5dd553b4547215dd07dc3acdfda78b5576e8",
+                "url": "https://api.github.com/repos/wp-cli/dist-archive-command/zipball/ede13cd4b8084f7861290ac4fcdda7f9866efe09",
+                "reference": "ede13cd4b8084f7861290ac4fcdda7f9866efe09",
                 "shasum": ""
             },
             "require": {
@@ -6528,7 +6528,7 @@
                 "behat/behat": "~2.5",
                 "wp-cli/extension-command": "^2",
                 "wp-cli/scaffold-command": "^2",
-                "wp-cli/wp-cli-tests": "^2"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -6562,7 +6562,7 @@
             ],
             "description": "Create a distribution .zip or .tar.gz based on a plugin or theme's .distignore file.",
             "homepage": "https://runcommand.io/wp/dist-archive/",
-            "time": "2018-11-21T17:58:46+00:00"
+            "time": "2020-06-02T00:16:00+00:00"
         },
         {
             "name": "wp-cli/embed-command",
@@ -7970,12 +7970,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "0ae9f0f0472351480e2f60b55b2c674173f82774"
+                "reference": "49c3cba49ecd40cfac75f30d4e5be996c0b120be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/0ae9f0f0472351480e2f60b55b2c674173f82774",
-                "reference": "0ae9f0f0472351480e2f60b55b2c674173f82774",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/49c3cba49ecd40cfac75f30d4e5be996c0b120be",
+                "reference": "49c3cba49ecd40cfac75f30d4e5be996c0b120be",
                 "shasum": ""
             },
             "require": {
@@ -7993,7 +7993,7 @@
                 "wp-cli/entity-command": "^1.2 || ^2",
                 "wp-cli/extension-command": "^1.1 || ^2",
                 "wp-cli/package-command": "^1 || ^2",
-                "wp-cli/wp-cli-tests": "^2.1"
+                "wp-cli/wp-cli-tests": "^2.1.14"
             },
             "suggest": {
                 "ext-readline": "Include for a better --prompt implementation",
@@ -8028,7 +8028,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2020-06-10T15:22:07+00:00"
+            "time": "2020-07-05T21:55:14+00:00"
         },
         {
             "name": "wp-cli/wp-cli-bundle",
