@@ -2995,6 +2995,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
@@ -4139,16 +4140,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.5",
+            "version": "3.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6"
+                "reference": "9d583721a7157ee997f235f327de038e7ea6dac4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
-                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9d583721a7157ee997f235f327de038e7ea6dac4",
+                "reference": "9d583721a7157ee997f235f327de038e7ea6dac4",
                 "shasum": ""
             },
             "require": {
@@ -4186,7 +4187,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2020-04-17T01:09:41+00:00"
+            "time": "2020-10-23T02:01:07+00:00"
         },
         {
             "name": "symfony/console",
@@ -7970,12 +7971,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "49c3cba49ecd40cfac75f30d4e5be996c0b120be"
+                "reference": "d394b395995e70932df5a58baab18f2942afbc28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/49c3cba49ecd40cfac75f30d4e5be996c0b120be",
-                "reference": "49c3cba49ecd40cfac75f30d4e5be996c0b120be",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/d394b395995e70932df5a58baab18f2942afbc28",
+                "reference": "d394b395995e70932df5a58baab18f2942afbc28",
                 "shasum": ""
             },
             "require": {
@@ -8028,7 +8029,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2020-07-05T21:55:14+00:00"
+            "time": "2020-10-09T07:57:08+00:00"
         },
         {
             "name": "wp-cli/wp-cli-bundle",
