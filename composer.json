@@ -10,22 +10,21 @@
       "email": "milad@nekofar.com"
     }
   ],
-  "prefer-stable": true,
-  "minimum-stability": "dev",
   "require": {
-    "php": ">=7.0|>=8.0",
+    "php": ">=7.0 || >=8.0",
     "ext-json": "*",
     "composer/installers": "~1.0"
   },
   "require-dev": {
-    "wordpress/wordpress": "5.3",
     "codeception/codeception": "^4",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
     "friendsofphp/php-cs-fixer": "v3.0.0",
     "lucatume/wp-browser": "3.0.8",
     "phpcompatibility/phpcompatibility-wp": "*",
     "phpunit/phpunit": "^8.2",
+    "roave/security-advisories": "dev-latest",
     "squizlabs/php_codesniffer": "*",
+    "wordpress/wordpress": "5.3",
     "wp-cli/dist-archive-command": "v2.0.1",
     "wp-cli/wp-cli": "^2.2",
     "wp-coding-standards/wpcs": "^2.1"
@@ -48,6 +47,8 @@
       }
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "scripts": {
     "lint": "./vendor/bin/phpcs"
   }
