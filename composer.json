@@ -1,6 +1,6 @@
 {
   "name": "nekofar/virgool",
-  "type": "project",
+  "type": "wordpress-plugin",
   "description": "Virgool lets you publish posts automatically to a Virgool profile.",
   "homepage": "https://github.com/nekofar/virgool",
   "license": "GPL-2.0+",
