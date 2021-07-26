@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f9d1cd981808927e998944570e0b9ab",
+    "content-hash": "50e10f8ef849579b058336629333fe0f",
     "packages": [
         {
             "name": "composer/installers",
@@ -6352,10 +6352,10 @@
         },
         {
             "name": "wordpress/wordpress",
-            "version": "5.3",
+            "version": "5.8",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/5.3.zip"
+                "url": "https://github.com/WordPress/WordPress/archive/5.8.zip"
             },
             "type": "wordpress-core"
         },

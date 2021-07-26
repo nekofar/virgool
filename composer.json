@@ -24,7 +24,7 @@
     "phpunit/phpunit": "^8.2",
     "roave/security-advisories": "dev-latest",
     "squizlabs/php_codesniffer": "*",
-    "wordpress/wordpress": "5.3",
+    "wordpress/wordpress": "5.8",
     "wp-cli/dist-archive-command": "v2.0.1",
     "wp-cli/wp-cli": "^2.2",
     "wp-coding-standards/wpcs": "^2.1"
@@ -39,10 +39,10 @@
       "package": {
         "name": "wordpress/wordpress",
         "type": "wordpress-core",
-        "version": "5.3",
+        "version": "5.8",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/5.3.zip"
+          "url": "https://github.com/WordPress/WordPress/archive/5.8.zip"
         }
       }
     }
