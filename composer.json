@@ -22,7 +22,7 @@
     "codeception/codeception": "^4",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
     "friendsofphp/php-cs-fixer": "v3.0.0",
-    "lucatume/wp-browser": "^2.6",
+    "lucatume/wp-browser": "3.0.8",
     "phpcompatibility/phpcompatibility-wp": "*",
     "phpunit/phpunit": "^8.2",
     "squizlabs/php_codesniffer": "*",
