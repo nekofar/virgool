@@ -20,7 +20,7 @@
     "wordpress/wordpress": "5.3",
     "codeception/codeception": "^4",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-    "friendsofphp/php-cs-fixer": "^2.15",
+    "friendsofphp/php-cs-fixer": "^3",
     "lucatume/wp-browser": "^2.6",
     "phpcompatibility/phpcompatibility-wp": "*",
     "phpunit/phpunit": "^8.2",
