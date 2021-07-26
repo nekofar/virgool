@@ -26,7 +26,7 @@
     "phpcompatibility/phpcompatibility-wp": "*",
     "phpunit/phpunit": "^8.2",
     "squizlabs/php_codesniffer": "*",
-    "wp-cli/dist-archive-command": "v2.0.0",
+    "wp-cli/dist-archive-command": "v2.0.1",
     "wp-cli/wp-cli": "^2.2",
     "wp-coding-standards/wpcs": "^2.1"
   },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f035d36082053c7ea9b39112e425a2a7",
+    "content-hash": "bb2a79e5be5a32f20a62f368440b43dc",
     "packages": [
         {
             "name": "composer/installers",
@@ -5982,16 +5982,16 @@
         },
         {
             "name": "wp-cli/dist-archive-command",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/dist-archive-command.git",
-                "reference": "f40b5dd553b4547215dd07dc3acdfda78b5576e8"
+                "reference": "ede13cd4b8084f7861290ac4fcdda7f9866efe09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/dist-archive-command/zipball/f40b5dd553b4547215dd07dc3acdfda78b5576e8",
-                "reference": "f40b5dd553b4547215dd07dc3acdfda78b5576e8",
+                "url": "https://api.github.com/repos/wp-cli/dist-archive-command/zipball/ede13cd4b8084f7861290ac4fcdda7f9866efe09",
+                "reference": "ede13cd4b8084f7861290ac4fcdda7f9866efe09",
                 "shasum": ""
             },
             "require": {
@@ -6002,7 +6002,7 @@
                 "behat/behat": "~2.5",
                 "wp-cli/extension-command": "^2",
                 "wp-cli/scaffold-command": "^2",
-                "wp-cli/wp-cli-tests": "^2"
+                "wp-cli/wp-cli-tests": "^2.1"
             },
             "type": "wp-cli-package",
             "extra": {
@@ -6038,9 +6038,9 @@
             "homepage": "https://runcommand.io/wp/dist-archive/",
             "support": {
                 "issues": "https://github.com/wp-cli/dist-archive-command/issues",
-                "source": "https://github.com/wp-cli/dist-archive-command/tree/master"
+                "source": "https://github.com/wp-cli/dist-archive-command/tree/v2.0.1"
             },
-            "time": "2018-11-21T17:58:46+00:00"
+            "time": "2020-06-02T00:16:00+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
