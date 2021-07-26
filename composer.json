@@ -1,8 +1,8 @@
 {
   "name": "nekofar/virgool",
+  "type": "wordpress-plugin",
   "description": "Virgool lets you publish posts automatically to a Virgool profile.",
   "homepage": "https://github.com/nekofar/virgool",
-  "type": "wordpress-plugin",
   "license": "GPL-2.0+",
   "authors": [
     {
@@ -10,25 +10,24 @@
       "email": "milad@nekofar.com"
     }
   ],
-  "prefer-stable": true,
-  "minimum-stability": "dev",
   "require": {
-    "php": ">=5.6|>=7.0",
+    "php": ">=7.0 || >=8.0",
     "ext-json": "*",
-    "composer/installers": "~1.0"
+    "composer/installers": "v1.11.0"
   },
   "require-dev": {
-    "wordpress/wordpress": "5.3",
-    "codeception/codeception": "4.1.14",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-    "friendsofphp/php-cs-fixer": "^2.15",
-    "lucatume/wp-browser": "^3.0",
-    "phpcompatibility/phpcompatibility-wp": "*",
-    "phpunit/phpunit": "^8.2",
-    "squizlabs/php_codesniffer": "*",
+    "codeception/codeception": "4.1.21",
+    "dealerdirect/phpcodesniffer-composer-installer": "0.7.1",
+    "friendsofphp/php-cs-fixer": "v3.0.0",
+    "lucatume/wp-browser": "3.0.8",
+    "phpcompatibility/phpcompatibility-wp": "2.1.2",
+    "phpunit/phpunit": "9.5.7",
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "3.6.0",
+    "wordpress/wordpress": "5.8",
     "wp-cli/dist-archive-command": "v2.0.1",
-    "wp-cli/wp-cli": "^2.2",
-    "wp-coding-standards/wpcs": "^2.1"
+    "wp-cli/wp-cli": "2.5.0",
+    "wp-coding-standards/wpcs": "2.3.0"
   },
   "repositories": [
     {
@@ -40,14 +39,16 @@
       "package": {
         "name": "wordpress/wordpress",
         "type": "wordpress-core",
-        "version": "5.3",
+        "version": "5.8",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/5.3.zip"
+          "url": "https://github.com/WordPress/WordPress/archive/5.8.zip"
         }
       }
     }
   ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "scripts": {
     "lint": "./vendor/bin/phpcs"
   }

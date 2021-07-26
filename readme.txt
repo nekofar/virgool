@@ -1,12 +1,12 @@
 === Virgool ===
 Contributors: nekofar
-Donate link: http://milad.nekofar.com/  
-Tags: virgool, publish, persian  
-Requires at least: 4.7.0  
-Tested up to: 5.2.2  
-Requires PHP: 5.6.4  
-Stable tag: 1.0.0  
-License: GPL-2.0+  
+Donate link: http://milad.nekofar.com/
+Tags: virgool, publish, persian
+Requires at least: 5.2.2
+Tested up to: 5.2.2
+Requires PHP: 7.0.0
+Stable tag: 1.0.0
+License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Publish posts automatically to a Virgool profile.
