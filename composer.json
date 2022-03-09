@@ -19,7 +19,7 @@
     "codeception/codeception": "4.1.30",
     "dealerdirect/phpcodesniffer-composer-installer": "0.7.1",
     "friendsofphp/php-cs-fixer": "v3.0.0",
-    "lucatume/wp-browser": "3.0.8",
+    "lucatume/wp-browser": "3.1.4",
     "phpcompatibility/phpcompatibility-wp": "2.1.2",
     "phpunit/phpunit": "9.5.18",
     "roave/security-advisories": "dev-latest",
