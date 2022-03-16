@@ -16,7 +16,7 @@
     "composer/installers": "v1.11.0"
   },
   "require-dev": {
-    "codeception/codeception": "4.1.30",
+    "codeception/codeception": "4.1.31",
     "dealerdirect/phpcodesniffer-composer-installer": "0.7.1",
     "friendsofphp/php-cs-fixer": "v3.0.0",
     "lucatume/wp-browser": "3.0.8",
