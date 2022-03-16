@@ -13,7 +13,7 @@
   "require": {
     "php": ">=7.0 || >=8.0",
     "ext-json": "*",
-    "composer/installers": "v1.11.0"
+    "composer/installers": "v2.0.1"
   },
   "require-dev": {
     "codeception/codeception": "4.1.30",
