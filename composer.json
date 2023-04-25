@@ -18,7 +18,7 @@
   "require-dev": {
     "codeception/codeception": "4.2.2",
     "dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
-    "friendsofphp/php-cs-fixer": "v3.10.0",
+    "friendsofphp/php-cs-fixer": "v3.16.0",
     "lucatume/wp-browser": "3.1.6",
     "phpcompatibility/phpcompatibility-wp": "2.1.4",
     "phpunit/phpunit": "9.5.22",
